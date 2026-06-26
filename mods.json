@@ -1,0 +1,74 @@
+[
+  {
+    "id": "biomes-plus",
+    "name": "Biomes Plus",
+    "author": "Yorlan_Dev",
+    "image": "https://picsum.photos/seed/biomesplus/640/420",
+    "download": "https://example.com/downloads/biomes-plus-2.4.zip",
+    "source": "https://github.com/yorlan-dev/biomes-plus",
+    "description": "Biomes Plus ajoute 14 nouveaux biomes à MultiCraft : marécages brumeux, canyons de grès rouge, forêts de bambous, toundra gelée et bien plus.\n\nChaque biome possède sa propre génération de terrain, sa végétation unique et ses minerais spécifiques. Le mod inclut également un système de transition douce entre les biomes pour éviter les bordures abruptes.\n\nCompatible avec la plupart des mods de génération de terrain existants. Aucune dépendance requise."
+  },
+  {
+    "id": "techcraft-industries",
+    "name": "TechCraft Industries",
+    "author": "RustyGears",
+    "image": "https://picsum.photos/seed/techcraft/640/420",
+    "download": "https://example.com/downloads/techcraft-industries-1.9.zip",
+    "source": "https://github.com/rustygears/techcraft-industries",
+    "description": "Un mod d'industrialisation complet : convoyeurs, fours électriques, générateurs et un réseau d'énergie basé sur des câbles.\n\nTechCraft Industries introduit plus de 40 nouvelles machines réparties en 4 tiers de progression, du moteur à vapeur au réacteur à fusion. Un système de recherche débloque progressivement les recettes les plus avancées.\n\nNote : nécessite au moins 512 Mo de RAM allouée au serveur pour de bonnes performances avec de nombreuses machines actives."
+  },
+  {
+    "id": "mob-horizon",
+    "name": "Mob Horizon",
+    "author": "Celestine",
+    "image": "https://picsum.photos/seed/mobhorizon/640/420",
+    "download": "https://example.com/downloads/mob-horizon-3.1.zip",
+    "source": "https://github.com/celestine-mods/mob-horizon",
+    "description": "Mob Horizon repeuple le monde de MultiCraft avec plus de 25 créatures inédites : loups des cimes, golems de basalte, esprits des bois et créatures aquatiques abyssales.\n\nChaque créature possède un comportement propre (groupes, territoires, cycles jour/nuit) et certaines lâchent des ressources exclusives utilisables dans des recettes additionnelles fournies par le mod.\n\nUn fichier de configuration permet d'activer ou désactiver chaque créature individuellement, idéal pour les serveurs qui veulent garder le contrôle sur leur écosystème."
+  },
+  {
+    "id": "better-farming",
+    "name": "Better Farming",
+    "author": "PixelHoe",
+    "image": "https://picsum.photos/seed/betterfarming/640/420",
+    "download": "https://example.com/downloads/better-farming-2.0.zip",
+    "source": "https://github.com/pixelhoe/better-farming",
+    "description": "Better Farming réinvente l'agriculture : nouvelles cultures, système d'irrigation, engrais composables et serres pour cultiver hors saison.\n\nLe mod ajoute également un système de qualité des récoltes influencé par l'eau, la lumière et le type de sol, qui affecte la quantité de nourriture obtenue à la récolte.\n\nLéger et pensé pour les petits serveurs communautaires, sans dépendance externe."
+  },
+  {
+    "id": "nether-gates",
+    "name": "Nether Gates",
+    "author": "Obsidienne",
+    "image": "https://picsum.photos/seed/nethergates/640/420",
+    "download": "https://example.com/downloads/nether-gates-1.5.zip",
+    "source": "https://github.com/obsidienne/nether-gates",
+    "description": "Ouvre un tout nouveau monde souterrain hostile rempli de structures en obsidienne, de pièges anciens et d'un boss final unique.\n\nNether Gates ajoute un portail craftable, un set d'armure résistant à la lave et une dizaine de nouvelles structures explorables générées proceduralement.\n\nAttention : ce mod modifie la génération du monde, il est recommandé de l'installer avant de démarrer un nouveau monde."
+  },
+  {
+    "id": "autobuild-tools",
+    "name": "AutoBuild Tools",
+    "author": "Quentin.exe",
+    "image": "https://picsum.photos/seed/autobuild/640/420",
+    "download": "https://example.com/downloads/autobuild-tools-4.2.zip",
+    "source": "https://github.com/quentinexe/autobuild-tools",
+    "description": "Une boîte à outils pour les bâtisseurs : outils de copie/collage de structures, gabarits symétriques, et un mode plan pour prévisualiser une construction avant de poser le premier bloc.\n\nAutoBuild Tools s'adresse surtout aux administrateurs de serveurs créatifs, avec des permissions configurables pour limiter l'accès aux outils les plus puissants.\n\nInterface en jeu via un menu dédié, aucune commande à mémoriser."
+  },
+  {
+    "id": "pvp-arena-kit",
+    "name": "PvP Arena Kit",
+    "author": "Strykr",
+    "image": "https://picsum.photos/seed/pvparena/640/420",
+    "download": "https://example.com/downloads/pvp-arena-kit-2.7.zip",
+    "source": "https://github.com/strykr/pvp-arena-kit",
+    "description": "Met en place un système complet d'arènes PvP : files d'attente, kits d'équipement par classe, statistiques de joueurs et arènes prédéfinies prêtes à l'emploi.\n\nLe mod gère automatiquement la téléportation, la remise à zéro de l'inventaire après chaque combat et un classement persistant sauvegardé entre les redémarrages du serveur.\n\nFacilement personnalisable via des fichiers de configuration pour créer ses propres modes de jeu."
+  },
+  {
+    "id": "skylands-generator",
+    "name": "Skylands Generator",
+    "author": "Nimbus_",
+    "image": "https://picsum.photos/seed/skylands/640/420",
+    "download": "https://example.com/downloads/skylands-generator-1.3.zip",
+    "source": "https://github.com/nimbus/skylands-generator",
+    "description": "Remplace la génération du monde par un archipel d'îles flottantes reliées par des ponts naturels et des cascades suspendues.\n\nSkylands Generator inclut des ruines aériennes à explorer, des ressources rares exclusives aux îles les plus hautes, et un système de chute amorti pour éviter les morts accidentelles trop fréquentes.\n\nIdéal pour les serveurs qui veulent une expérience d'exploration verticale différente du monde classique."
+  }
+]

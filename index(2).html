@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MultiDB — Mods pour MultiCraft</title>
+<meta name="description" content="MultiDB, le store communautaire de mods pour MultiCraft.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div id="cursor-halo"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="#/" class="logo" id="logo-home">
+      <span class="logo-icon">⛏️</span>
+      <span class="logo-text">Multi<em>DB</em></span>
+    </a>
+    <div class="search-bar" id="search-wrapper">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="search-input" placeholder="Rechercher un mod, un auteur…" autocomplete="off">
+    </div>
+  </div>
+</header>
+
+<main id="app">
+
+  <section class="page active" id="page-home">
+    <div class="page-header">
+      <h1>Mods <span class="gradient-text">MultiCraft</span></h1>
+      <p>Parcours, découvre et télécharge des mods créés par la communauté.</p>
+    </div>
+
+    <div class="servers-count" id="mods-count"></div>
+
+    <div id="mods-list" class="mods-list">
+      <div class="loading-state">
+        <div class="spinner"></div>
+        Chargement des mods…
+      </div>
+    </div>
+  </section>
+
+  <section class="page" id="page-detail">
+    <button class="btn btn-ghost back-btn" id="back-btn" type="button">← Retour à la liste</button>
+    <div id="mod-detail-content"></div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>MultiDB — Store communautaire de mods pour MultiCraft. Non affilié à l'éditeur du jeu.</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
