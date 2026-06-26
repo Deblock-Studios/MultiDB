@@ -204,16 +204,6 @@ body.cursor-active #cursor-halo {
   background: rgba(74, 222, 128, 0.08);
 }
 
-.btn-discord {
-  background: #5865f2;
-  color: #fff;
-}
-
-.btn-discord:hover {
-  background: #4752c4;
-  box-shadow: 0 6px 20px rgba(88, 101, 242, 0.35);
-}
-
 .page-header {
   margin-bottom: 2rem;
 }
@@ -317,6 +307,73 @@ body.cursor-active #cursor-halo {
   border-top: 1px solid var(--border);
   color: var(--text-dim);
   font-size: 0.85rem;
+}
+
+/* ── Sélecteur de langue ── */
+
+.lang-switch {
+  display: flex;
+  gap: 0.35rem;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 0.35rem;
+  flex-shrink: 0;
+}
+
+.lang-btn {
+  padding: 0.5rem 0.85rem;
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 0.75rem;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background var(--transition), color var(--transition);
+}
+
+.lang-btn:hover {
+  color: var(--text);
+}
+
+.lang-btn.active {
+  background: var(--green-dim);
+  color: var(--bg-deep);
+}
+
+/* ── Filtres de catégories ── */
+
+.category-filters {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.75rem;
+}
+
+.filter-btn {
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), border-color var(--transition), color var(--transition);
+}
+
+.filter-btn:hover {
+  border-color: var(--border-strong);
+  background: rgba(74, 222, 128, 0.08);
+}
+
+.filter-btn.active {
+  background: var(--green-dim);
+  color: var(--bg-deep);
+  border-color: var(--green-dim);
 }
 
 /* ── Liste des mods ── */
@@ -436,16 +493,6 @@ body.cursor-active #cursor-halo {
   font-weight: 600;
 }
 
-.mod-detail-meta a {
-  color: var(--green);
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
-.mod-detail-meta a:hover {
-  color: #86efac;
-}
-
 .mod-detail-description {
   background: var(--bg-card);
   border: 1px solid var(--border);
@@ -514,6 +561,11 @@ body.cursor-active #cursor-halo {
     font-size: 0.95rem;
   }
 
+  .category-filters {
+    flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
+
   .mod-detail-banner {
     max-height: 220px;
   }
@@ -545,6 +597,15 @@ body.cursor-active #cursor-halo {
   .mod-card-excerpt {
     -webkit-line-clamp: 3;
   }
+
+  .category-filters {
+    gap: 0.5rem;
+  }
+
+  .filter-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -568,6 +629,15 @@ body.cursor-active #cursor-halo {
 
   .mod-detail-title {
     font-size: 1.4rem;
+  }
+
+  .lang-switch {
+    padding: 0.25rem;
+  }
+
+  .lang-btn {
+    padding: 0.45rem 0.7rem;
+    font-size: 0.65rem;
   }
 }
 
