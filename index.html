@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MultiDB — Mods pour MultiCraft</title>
-<meta name="description" content="MultiDB, le store communautaire de mods pour MultiCraft.">
+<title id="page-title">MultiDB — Mods &amp; Textures pour MultiCraft</title>
+<meta name="description" id="page-description" content="MultiDB, le store communautaire de mods et textures pour MultiCraft.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,6 +22,10 @@
       <span class="search-icon">🔍</span>
       <input type="text" id="search-input" placeholder="Rechercher un mod, un auteur…" autocomplete="off">
     </div>
+    <div class="lang-switch" id="lang-switch" role="group" aria-label="Choix de la langue">
+      <button type="button" class="lang-btn" data-lang="fr">FR</button>
+      <button type="button" class="lang-btn" data-lang="en">EN</button>
+    </div>
   </div>
 </header>
 
@@ -29,8 +33,14 @@
 
   <section class="page active" id="page-home">
     <div class="page-header">
-      <h1>Mods <span class="gradient-text">MultiCraft</span></h1>
-      <p>Parcours, découvre et télécharge des mods créés par la communauté.</p>
+      <h1 id="hero-title">Mods <span class="gradient-text">& Textures</span></h1>
+      <p id="hero-subtitle">Parcours, découvre et télécharge des mods et packs de textures créés par la communauté.</p>
+    </div>
+
+    <div class="category-filters" id="category-filters" role="group" aria-label="Filtrer par catégorie">
+      <button type="button" class="filter-btn" data-category="all">Tout</button>
+      <button type="button" class="filter-btn" data-category="mod">Mods</button>
+      <button type="button" class="filter-btn" data-category="texture">Textures packs</button>
     </div>
 
     <div class="servers-count" id="mods-count"></div>
@@ -38,7 +48,7 @@
     <div id="mods-list" class="mods-list">
       <div class="loading-state">
         <div class="spinner"></div>
-        Chargement des mods…
+        <span id="loading-label">Chargement…</span>
       </div>
     </div>
   </section>
@@ -51,7 +61,7 @@
 </main>
 
 <footer class="site-footer">
-  <p>MultiDB — Store communautaire de mods pour MultiCraft. Non affilié à l'éditeur du jeu.</p>
+  <p id="footer-text">MultiDB — Store communautaire de mods et textures pour MultiCraft. Non affilié à l'éditeur du jeu.</p>
 </footer>
 
 <script src="script.js"></script>
