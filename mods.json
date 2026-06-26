@@ -6,10 +6,9 @@
     "author": "Rangee",
     "image": "https://picsum.photos/seed/biomesplus/640/420",
     "download": "https://files.catbox.moe/0dosc9.zip",
-    "source": "https://github.com/yorlan-dev/biomes-plus",
     "description": {
-      "fr": "Biomes Plus ajoute 14 nouveaux biomes à MultiCraft : marécages brumeux, canyons de grès rouge, forêts de bambous, toundra gelée et bien plus.\n\nChaque biome possède sa propre génération de terrain, sa végétation unique et ses minerais spécifiques. Le mod inclut également un système de transition douce entre les biomes pour éviter les bordures abruptes.\n\nCompatible avec la plupart des mods de génération de terrain existants. Aucune dépendance requise.",
-      "en": "Biomes Plus adds 14 new biomes to MultiCraft: misty swamps, red sandstone canyons, bamboo forests, frozen tundra and much more.\n\nEach biome has its own terrain generation, unique vegetation and specific ores. The mod also includes a smooth transition system between biomes to avoid abrupt borders.\n\nCompatible with most existing terrain-generation mods. No dependency required."
+      "fr": "Un texture pack pour le verre",
+      "en": "A texture pack for glass"
     }
   },
   {
