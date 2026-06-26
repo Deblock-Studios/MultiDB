@@ -12,16 +12,17 @@
     }
   },
   {
-    "id": "vivid-life-textures",
+    "id": "clear_vision",
     "category": "texture",
-    "name": "Vivid Life",
-    "author": "PixelKiln",
-    "image": "https://picsum.photos/seed/vividlife/640/420",
-    "download": "https://example.com/downloads/vivid-life-textures-3.0.zip",
-    "source": "https://github.com/pixelkiln/vivid-life-textures",
+    "name": "Clear Vision",
+    "author": "Rangee",
+    "image": "https://multidb.vercel.app/images/clear-vision.png",
+    "download": "https://files.catbox.moe/8wvcwn.zip",
     "description": {
-      "fr": "Vivid Life repeint entièrement MultiCraft avec une palette de couleurs saturées et un style cartoon affirmé, pensé pour donner un aspect vivant et chaleureux à chaque bloc.\n\nLe pack couvre l'intégralité des blocs, objets et éléments d'interface, avec une attention particulière portée aux feuillages et aux textures d'eau animées.\n\nDisponible en résolution 32x et 64x, avec un pack d'options pour ajuster la saturation des couleurs selon les goûts.",
-      "en": "Vivid Life completely repaints MultiCraft with a saturated color palette and a bold cartoon style, designed to give every block a lively, warm look.\n\nThe pack covers every block, item and UI element, with special attention paid to foliage and animated water textures.\n\nAvailable in 32x and 64x resolution, with an options pack to adjust color saturation to taste."
+   {
+  "fr": "Ce pack de textures masques les particules et les effets visuels qui obstruent le champ de vision du joueur.\n\nFonctionnalités notables :\n\nMasque l'effet visuel de la longue-vue\nSupprime entièrement les visuels de Cécité et de Fumée\nÉlimine presque toutes les particules du jeu !",
+ "en": "This texture pack hides particles and effects that block the player's field of vision.\n\nNotable features:\n\nHides the visual effect of the Spyglass\nCompletely removes Blindness and Smoke visuals\nRemoves almost all particles from the game!"
+    }
     }
   }
 ]
