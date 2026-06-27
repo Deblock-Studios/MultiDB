@@ -21,6 +21,17 @@
     "description": {
       "fr": "Ce pack de textures masques les particules et les effets visuels qui obstruent le champ de vision du joueur.\n\nFonctionnalités notables :\n\nMasque l'effet visuel de la longue-vue\nSupprime entièrement les visuels de Cécité et de Fumée\nÉlimine presque toutes les particules du jeu !",
       "en": "This texture pack hides particles and effects that block the player's field of vision.\n\nNotable features:\n\nHides the visual effect of the Spyglass\nCompletely removes Blindness and Smoke visuals\nRemoves almost all particles from the game!"
+    },
+      {
+    "id": "checkered_titles",
+    "category": "texture",
+    "name": "Checkered Titles",
+    "author": "Dulen",
+    "image": "https://multidb.vercel.app/images/checkered_titles.png",
+    "download": "https://files.catbox.moe/5q662a.zip",
+    "description": {
+      "fr": "Un texture pack qui ajoute de nouvelles textures pour les blocs de brique",
+      "en": "A texture pack that add new textures for bricks blocks"
     }
   }
 ]
