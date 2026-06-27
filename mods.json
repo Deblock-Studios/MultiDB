@@ -49,7 +49,8 @@
     "description": {
       "fr": "Un texture pack qui reprend les textures de Minecraft",
       "en": "A texture pack that add Minecraft's textures."
-    },
+    }
+  },
       {
     "id": "sapphire",
     "category": "mod",
