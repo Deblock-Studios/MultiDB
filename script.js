@@ -268,15 +268,12 @@
     var discordHtml = '';
 
     if (mod.discord) {
-      discordHtml =
-        '<button type="button" class="btn-discord" id="discord-copy-btn" data-username="' +
-        escapeHtml(mod.discord) +
-        '">' +
-        '<svg class="discord-icon" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true">' +
-        '<path fill="currentColor" d="M20.317 4.369A19.79 19.79 0 0 0 15.885 3c-.21.375-.444.875-.608 1.276a18.27 18.27 0 0 0-5.487 0A12.64 12.64 0 0 0 9.182 3 19.736 19.736 0 0 0 4.75 4.37C2.34 7.94 1.674 11.42 1.997 14.85a19.9 19.9 0 0 0 5.993 3.04c.483-.66.914-1.36 1.282-2.098a12.93 12.93 0 0 1-2.017-.97c.17-.124.336-.255.497-.39a14.2 14.2 0 0 0 12.495 0c.163.135.328.266.497.39-.642.378-1.32.696-2.02.97.368.738.798 1.438 1.282 2.098a19.876 19.876 0 0 0 5.996-3.04c.38-3.97-.628-7.413-2.665-10.481ZM8.677 12.78c-.804 0-1.46-.748-1.46-1.665 0-.918.642-1.667 1.46-1.667.825 0 1.475.756 1.46 1.667 0 .917-.642 1.665-1.46 1.665Zm6.646 0c-.804 0-1.46-.748-1.46-1.665 0-.918.642-1.667 1.46-1.667.825 0 1.475.756 1.46 1.667 0 .917-.635 1.665-1.46 1.665Z"/>' +
-        '</svg>' +
-        '<span class="discord-btn-label">' + t('discord-button') + '</span>' +
-        '</button>';
+discordHtml =
+  '<button type="button" class="btn-discord" id="discord-copy-btn" data-username="' +
+  escapeHtml(mod.discord) +
+  '">' +
+  '<span class="discord-btn-label">' + t('discord-button') + '</span>' +
+  '</button>';
     }
 
     detailContent.innerHTML =
