@@ -36,6 +36,18 @@
     "description": {
       "fr": "Un texture pack qui ajoute de nouvelles textures pour les blocs de brique",
       "en": "A texture pack that add new textures for bricks blocks"
+    },
+    {
+    "id": "checkered_titles",
+    "category": "texture",
+    "name": "Checkered Titles",
+    "author": "Aurelmattnath",
+    "discord": "thefiremulti",
+    "image": "https://multidb.vercel.app/images/minecraft.png",
+    "download": "https://files.catbox.moe/6nhhf3.zip",
+    "description": {
+      "fr": "Un texture pack qui reprend les textures de Minecraft",
+      "en": "A texture pack that add Minecraft's textures."
     }
   }
 ]
