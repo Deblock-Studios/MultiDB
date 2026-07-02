@@ -350,7 +350,103 @@ body.cursor-active #cursor-halo {
   display: flex;
   gap: 0.75rem;
   flex-wrap: wrap;
+  align-items: center;
   margin-bottom: 1.75rem;
+}
+
+.btn-post-mod {
+  margin-left: auto;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--green-dim);
+  background: var(--green-dim);
+  color: var(--bg-deep);
+  font-family: var(--font);
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.btn-post-mod:hover {
+  background: var(--green);
+  border-color: var(--green);
+  transform: translateY(-1px);
+}
+
+/* -- Modale "Poster un mod" -- */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 15, 12, 0.75);
+  backdrop-filter: blur(4px);
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  position: relative;
+  width: 100%;
+  max-width: 420px;
+  background: var(--bg-card, #10221a);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: 0 0 40px var(--green-glow);
+}
+
+.modal-box h2 {
+  margin: 0 0 0.9rem;
+  color: var(--text);
+  font-size: 1.25rem;
+}
+
+.modal-box p {
+  margin: 0;
+  color: var(--text-muted);
+  line-height: 1.6;
+  font-size: 0.95rem;
+}
+
+.modal-box a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 2rem;
+  height: 2rem;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--text-muted);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: 1rem;
+  line-height: 1;
+  transition: background var(--transition), color var(--transition);
+}
+
+.modal-close:hover {
+  background: rgba(74, 222, 128, 0.12);
+  color: var(--text);
+}
+
+@media (max-width: 600px) {
+  .btn-post-mod {
+    margin-left: 0;
+    width: 100%;
+  }
 }
 
 .filter-btn {
