@@ -394,6 +394,29 @@ body.cursor-active #cursor-halo {
   transform: translateY(-1px);
 }
 
+.btn-tuto {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.6rem 1.25rem;
+  border: 1px solid var(--border-strong);
+  background: transparent;
+  color: var(--text);
+  font-family: var(--font);
+  font-weight: 600;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border-radius: var(--radius-sm);
+  text-decoration: none;
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+}
+
+.btn-tuto:hover {
+  background: rgba(74, 222, 128, 0.08);
+  border-color: var(--green-dim);
+  transform: translateY(-1px);
+}
+
 /* -- Modale "Poster un mod" -- */
 
 .modal-overlay {

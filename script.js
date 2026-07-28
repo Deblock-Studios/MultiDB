@@ -35,7 +35,8 @@
       'post-mod-button': 'Poster un mod',
       'post-mod-title': 'Poster un mod',
       'post-mod-text': 'Pour poster un mod, envoie un message sur Discord à <strong>.lucas76.</strong> ou un mail à <a href="mailto:creatif.france@outlook.com">creatif.france@outlook.com</a>.',
-      'post-mod-close': 'Fermer'
+      'post-mod-close': 'Fermer',
+      'tuto-button': '📖 Tutoriel'
     },
     en: {
       'hero-title-start': 'Mods',
@@ -65,7 +66,8 @@
       'post-mod-button': 'Post a mod',
       'post-mod-title': 'Post a mod',
       'post-mod-text': 'To post a mod, send a message on Discord to <strong>.lucas76.</strong> or an email to <a href="mailto:creatif.france@outlook.com">creatif.france@outlook.com</a>.',
-      'post-mod-close': 'Close'
+      'post-mod-close': 'Close',
+      'tuto-button': '📖 Tutorial'
     }
   };
 
@@ -129,6 +131,8 @@
     document.getElementById('post-mod-title').textContent = t('post-mod-title');
     document.getElementById('post-mod-text').innerHTML = t('post-mod-text');
     document.getElementById('post-mod-close').setAttribute('aria-label', t('post-mod-close'));
+    var tutoBtn = document.getElementById('tuto-btn');
+    if (tutoBtn) tutoBtn.textContent = t('tuto-button');
   }
 
   function updateLangButtons() {

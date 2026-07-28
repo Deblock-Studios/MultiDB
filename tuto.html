@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tutoriel — MultiDB</title>
+<meta name="description" content="Tutoriel interactif pour installer des mods et textures sur MultiCraft.">
+<link rel="stylesheet" href="style.css">
+<style>
+.tuto-hero {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.tuto-hero h1 {
+  font-size: clamp(1.8rem, 4vw, 2.4rem);
+  margin-bottom: 0.5rem;
+}
+.tuto-hero p {
+  color: var(--text-muted);
+  font-size: 1.05rem;
+}
+
+/* Steps container */
+.tuto-step {
+  display: none;
+  animation: fadeIn 0.4s ease forwards;
+  max-width: 640px;
+  margin: 0 auto;
+}
+.tuto-step.active {
+  display: block;
+}
+
+.tuto-question {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.tuto-question h2 {
+  font-size: 1.3rem;
+  color: var(--text);
+  margin-bottom: 0.5rem;
+}
+.tuto-question p {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+/* OS helper text */
+.tuto-os-help {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  margin-top: -0.75rem;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* OS icons row */
+.tuto-os-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+.tuto-os-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Choice buttons grid */
+.tuto-choices {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.tuto-choice-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 1.5rem 2rem;
+  min-width: 160px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+.tuto-choice-btn:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+}
+.tuto-choice-btn .icon {
+  font-size: 2rem;
+}
+.tuto-choice-btn .sub {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+
+/* OS buttons */
+.tuto-os-list {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.tuto-os-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.2rem 1.5rem;
+  min-width: 120px;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: var(--font);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: border-color var(--transition), background var(--transition), transform var(--transition);
+}
+.tuto-os-btn:hover {
+  border-color: var(--border-strong);
+  background: var(--bg-card-hover);
+  transform: translateY(-3px);
+}
+.tuto-os-btn .icon {
+  font-size: 1.8rem;
+}
+
+/* Tutorial result card */
+.tuto-result {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.75rem 2rem;
+  line-height: 1.8;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 1.5rem;
+}
+.tuto-result h3 {
+  color: var(--text);
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.tuto-result p {
+  margin-bottom: 0.7rem;
+}
+.tuto-result p:last-child {
+  margin-bottom: 0;
+}
+.tuto-result ul {
+  margin: 0.6rem 0 0.8rem 1.5rem;
+}
+.tuto-result li {
+  margin-bottom: 0.4rem;
+}
+.tuto-result strong {
+  color: var(--text);
+}
+.tuto-result .note {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.65rem 1rem;
+  background: rgba(74, 222, 128, 0.06);
+  border: 1px solid rgba(74, 222, 128, 0.12);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: var(--green-muted);
+}
+.tuto-result .warning {
+  display: block;
+  margin-top: 1rem;
+  padding: 0.65rem 1rem;
+  background: rgba(255, 183, 74, 0.06);
+  border: 1px solid rgba(255, 183, 74, 0.15);
+  border-radius: var(--radius-sm);
+  font-size: 0.88rem;
+  color: #fbbf24;
+}
+.tuto-result .impossible {
+  text-align: center;
+  padding: 2rem 1rem;
+  color: var(--text-dim);
+  font-style: italic;
+  font-size: 1.05rem;
+}
+
+/* Back / restart buttons */
+.tuto-actions {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1.5rem;
+}
+
+/* Breadcrumb */
+.tuto-breadcrumb {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.82rem;
+  color: var(--text-dim);
+}
+.tuto-breadcrumb span {
+  opacity: 0.5;
+}
+.tuto-breadcrumb .active-step {
+  color: var(--green);
+  opacity: 1;
+  font-weight: 600;
+}
+
+@media (max-width: 560px) {
+  .tuto-choice-btn {
+    min-width: 130px;
+    padding: 1.2rem 1.2rem;
+  }
+  .tuto-os-btn {
+    min-width: 100px;
+    padding: 1rem 1rem;
+  }
+  .tuto-result {
+    padding: 1.25rem 1.1rem;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div id="cursor-halo"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="icon.png" alt="Logo" style="width: 2em; height: 2em; vertical-align: middle;" />
+      <span class="logo-text">Multi<em>DB</em></span>
+    </a>
+    <nav style="display:flex; gap: 0.75rem; flex-shrink: 0; align-items:center;">
+      <div class="lang-switch" role="group" aria-label="Choix de la langue">
+        <button type="button" class="lang-btn active" data-lang="fr">🇫🇷</button>
+        <button type="button" class="lang-btn" data-lang="en">🇬🇧</button>
+      </div>
+      <a href="index.html" class="btn btn-ghost" style="padding: 0.55rem 1.1rem; font-size: 0.88rem;" id="back-home-btn">← <span id="back-label">Accueil</span></a>
+    </nav>
+  </div>
+</header>
+
+<main id="app">
+  <div class="page active">
+
+    <div class="tuto-hero">
+      <h1 id="tuto-title"><span class="gradient-text">Tutoriel</span></h1>
+      <p id="tuto-subtitle">Installe facilement des mods et des packs de textures sur MultiCraft.</p>
+    </div>
+
+    <!-- Breadcrumb -->
+    <div class="tuto-breadcrumb" id="tuto-breadcrumb">
+      <span class="active-step" data-step="1" id="bc-type">Type</span>
+      <span>›</span>
+      <span data-step="2" id="bc-os">OS</span>
+      <span>›</span>
+      <span data-step="3" id="bc-result">Résultat</span>
+    </div>
+
+    <!-- Step 1: Choose type -->
+    <div class="tuto-step active" id="step-1">
+      <div class="tuto-question">
+        <h2 id="q1-title">Que veux-tu installer ?</h2>
+        <p id="q1-sub">Choisis entre un mod ou un pack de textures.</p>
+      </div>
+      <div class="tuto-choices">
+        <button type="button" class="tuto-choice-btn" data-type="mod">
+          <span class="icon">🧩</span>
+          <span id="choice-mod">Mod</span>
+          <span class="sub" id="choice-mod-sub">Ajoute des fonctionnalités</span>
+        </button>
+        <button type="button" class="tuto-choice-btn" data-type="texture">
+          <span class="icon">🎨</span>
+          <span id="choice-texture">Texture pack</span>
+          <span class="sub" id="choice-texture-sub">Change l'apparence du jeu</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 2: Choose OS -->
+    <div class="tuto-step" id="step-2">
+      <div class="tuto-question">
+        <h2 id="q2-title">Quel est ton système d'exploitation ?</h2>
+        <p id="q2-sub">Sélectionne la plateforme sur laquelle tu joues.</p>
+      </div>
+      <div class="tuto-os-help" id="os-help">iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android · PC sans logo pomme = Windows/Linux</div>
+      <div class="tuto-os-list">
+        <button type="button" class="tuto-os-btn" data-os="android">
+          <span class="icon">📱</span>
+          <span>Android</span>
+        </button>
+        <button type="button" class="tuto-os-btn" data-os="ios">
+          <span class="icon">🍎</span>
+          <span id="os-ios-label">iOS / macOS</span>
+        </button>
+        <button type="button" class="tuto-os-btn" data-os="windows">
+          <span class="icon">🪟</span>
+          <span id="os-win-label">Windows</span>
+        </button>
+        <button type="button" class="tuto-os-btn" data-os="linux">
+          <span class="icon">🐧</span>
+          <span>Linux</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Step 3: Result -->
+    <div class="tuto-step" id="step-3">
+      <div id="tuto-result-content"></div>
+      <div class="tuto-actions">
+        <button type="button" class="btn btn-ghost" id="tuto-restart-btn">↩ <span id="restart-label">Recommencer</span></button>
+      </div>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p id="footer-text">MultiDB — Store communautaire de mods et textures pour MultiCraft. Non affilié à l'éditeur du jeu.</p>
+  <a href="https://deblock-studios.vercel.app/" class="btn-deblock" target="_blank">Deblock Studios</a>
+</footer>
+
+<script>
+(function () {
+  'use strict';
+
+  // ========== TRANSLATIONS ==========
+  var translations = {
+    fr: {
+      'page-title': 'Tutoriel — MultiDB',
+      'page-desc': 'Tutoriel interactif pour installer des mods et textures sur MultiCraft.',
+      'tuto-title': 'Tutoriel',
+      'tuto-subtitle': 'Installe facilement des mods et des packs de textures sur MultiCraft.',
+      'bc-type': 'Type',
+      'bc-os': 'OS',
+      'bc-result': 'Résultat',
+      'q1-title': 'Que veux-tu installer ?',
+      'q1-sub': 'Choisis entre un mod ou un pack de textures.',
+      'choice-mod': 'Mod',
+      'choice-mod-sub': 'Ajoute des fonctionnalités',
+      'choice-texture': 'Texture pack',
+      'choice-texture-sub': "Change l'apparence du jeu",
+      'q2-title': "Quel est ton système d'exploitation ?",
+      'q2-sub': 'Sélectionne la plateforme sur laquelle tu joues.',
+      'os-help': 'iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android · PC sans logo pomme = Windows/Linux',
+      'os-ios-label': 'iOS / macOS',
+      'os-win-label': 'Windows',
+      'restart-label': 'Recommencer',
+      'back-label': 'Accueil',
+      'footer-text': 'MultiDB — Store communautaire de mods et textures pour MultiCraft. Non affilié à l\'éditeur du jeu.',
+
+      // Mod - Android
+      'mod-android-title': '🧩 Installer un mod sur Android',
+      'mod-android-intro': 'Pour installer un mod sur Android, suis ces étapes :',
+      'mod-android-req-title': 'Tu auras besoin :',
+      'mod-android-req-1': "Soit d'un gestionnaire de fichiers supportant l'accès aux fichiers d'applications comme MT Manager",
+      'mod-android-req-2': "Soit d'un ordinateur et d'un câble",
+      'mod-android-note': 'Ici nous avons détaillé les étapes pour MT Manager.',
+      'mod-android-step1': 'Télécharge le mod de ton choix et extrais le ZIP.',
+      'mod-android-step2': "Ouvre MT Manager. Sur la partie gauche de l'application, ouvre le dossier Downloads et cherche le dossier du mod.",
+      'mod-android-step3': "Sur la partie droite de l'application, ouvre le dossier Android, puis data, puis com.multicraft.game, puis files, puis mods.",
+      'mod-android-step4': "Sur la partie gauche de l'application, reste appuyé sur le dossier du mod et clique sur « move -> ».",
+      'mod-android-step5': "Ouvre MultiCraft, dans le menu « Solo » clique sur « Mods gratuits ici ». Cherche le mod que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le mod !",
+
+      // Mod - iOS/macOS
+      'mod-ios-title': '🧩 Installer un mod sur iOS / macOS',
+      'mod-ios-disclaimer': "Aucun membre de notre équipe n'est sur iOS / macOS donc nous ne savons pas si ce tutoriel est précis. Désolés :(",
+      'mod-ios-step1': "Télécharge le mod de ton choix et extrais le zip. Ensuite copie le dossier.",
+      'mod-ios-step2': 'Dans « Mon iPhone » ou « Mon iPad », trouve le dossier MultiCraft. Ouvre-le et ouvre le dossier mods. Ensuite colle le dossier du mod.',
+      'mod-ios-step3': "Ouvre MultiCraft, dans le menu « Solo » clique sur « Mods gratuits ici ». Cherche le mod que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le mod !",
+
+      // Mod - Windows/Linux
+      'mod-windows-title': '🧩 Installer un mod sur Windows',
+      'mod-windows-impossible': 'Impossible, la version Windows de MultiCraft n\'ayant pas de solo.',
+      'mod-linux-title': '🧩 Installer un mod sur Linux',
+      'mod-linux-impossible': 'Impossible, la version Windows de MultiCraft (utilisée via Wine) n\'ayant pas de solo.',
+
+      // Texture - Windows
+      'texture-windows-title': '🎨 Installer un texture pack sur Windows',
+      'texture-windows-step1': "Télécharge le pack de ton choix et extrais le zip. Ensuite copie le dossier.",
+      'texture-windows-step2': "Dans le dossier Windows (C:), clique sur Users, puis sur ton nom, puis sur AppData, puis sur Roaming, après clique sur MultiCraft et enfin sur textures. Colle le dossier du pack.",
+      'texture-windows-step3': "Ouvre MultiCraft, dans les paramètres clique sur « Packs de textures ». Cherche le pack de texture que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le pack de texture en solo et en multijoueur !",
+
+      // Texture - Linux
+      'texture-linux-title': '🎨 Installer un texture pack sur Linux',
+      'texture-linux-note': 'Les instructions pour Linux sont basées sur l\'utilisation de Wine, car MultiCraft ne propose pas de version Linux.',
+      'texture-linux-step1': "Télécharge le pack de ton choix et extrais le zip. Ensuite copie le dossier.",
+      'texture-linux-step2': "Rends-toi sur ton dossier principal (/home/tonnom). Ensuite, clique sur « Affichage » en haut puis sur « Afficher les fichiers cachés ». Tu verras ensuite le dossier « .wine ». Ouvre-le, puis clique sur drive_c puis Program Files puis MultiCraft et enfin sur textures. Colle le dossier du pack.",
+      'texture-linux-step3': "Ouvre MultiCraft, dans les paramètres clique sur « Packs de textures ». Cherche le pack de texture que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le pack de texture en solo et en multijoueur !",
+
+      // Texture - Android
+      'texture-android-title': '🎨 Installer un texture pack sur Android',
+      'texture-android-req-title': "Tu auras besoin :",
+      'texture-android-req-1': "Soit d'un gestionnaire de fichiers supportant l'accès aux fichiers d'applications comme MT Manager",
+      'texture-android-req-2': "Soit d'un ordinateur et d'un câble",
+      'texture-android-note': 'Ici nous avons détaillé les étapes pour MT Manager.',
+      'texture-android-step1': "Télécharge le pack de ton choix et extrais le ZIP.",
+      'texture-android-step2': "Ouvre MT Manager. Sur la partie gauche de l'application, ouvre le dossier Downloads et cherche le dossier du pack.",
+      'texture-android-step3': "Sur la partie droite de l'application, ouvre le dossier Android, puis data, puis com.multicraft.game, puis files, puis textures.",
+      'texture-android-step4': "Sur la partie gauche de l'application, reste appuyé sur le dossier du pack et clique sur « move -> ».",
+      'texture-android-step5': "Ouvre MultiCraft, dans les paramètres clique sur « Packs de textures ». Cherche le pack de texture que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le pack de texture en solo et en multijoueur !",
+
+      // Texture - iOS/macOS
+      'texture-ios-title': '🎨 Installer un texture pack sur iOS / macOS',
+      'texture-ios-disclaimer': "Aucun membre de notre équipe n'est sur iOS / macOS donc nous ne savons pas si ce tutoriel est précis. Désolés :(",
+      'texture-ios-step1': "Télécharge le pack de ton choix et extrais le zip. Ensuite copie le dossier.",
+      'texture-ios-step2': "Dans « Mon iPhone » ou « Mon iPad », trouve le dossier MultiCraft. Ouvre-le et ouvre le dossier textures. Ensuite colle le dossier du pack.",
+      'texture-ios-step3': "Ouvre MultiCraft, dans les paramètres clique sur « Packs de textures ». Cherche le pack de texture que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le pack de texture en solo et en multijoueur !"
+    },
+
+    en: {
+      'page-title': 'Tutorial — MultiDB',
+      'page-desc': 'Interactive tutorial to install mods and textures on MultiCraft.',
+      'tuto-title': 'Tutorial',
+      'tuto-subtitle': 'Easily install mods and texture packs on MultiCraft.',
+      'bc-type': 'Type',
+      'bc-os': 'OS',
+      'bc-result': 'Result',
+      'q1-title': 'What do you want to install?',
+      'q1-sub': 'Choose between a mod or a texture pack.',
+      'choice-mod': 'Mod',
+      'choice-mod-sub': 'Adds features',
+      'choice-texture': 'Texture pack',
+      'choice-texture-sub': "Changes the game's look",
+      'q2-title': 'What is your operating system?',
+      'q2-sub': 'Select the platform you play on.',
+      'os-help': 'iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android · PC without Apple logo = Windows/Linux',
+      'os-ios-label': 'iOS / macOS',
+      'os-win-label': 'Windows',
+      'restart-label': 'Restart',
+      'back-label': 'Home',
+      'footer-text': 'MultiDB — Community store of mods and textures for MultiCraft. Not affiliated with MultiCraft.',
+
+      // Mod - Android
+      'mod-android-title': '🧩 Install a mod on Android',
+      'mod-android-intro': 'To install a mod on Android, follow these steps:',
+      'mod-android-req-title': 'You will need:',
+      'mod-android-req-1': 'Either a file manager that supports app data access, like MT Manager',
+      'mod-android-req-2': 'Or a computer and a cable',
+      'mod-android-note': 'Here are the detailed steps for MT Manager.',
+      'mod-android-step1': 'Download the mod of your choice and extract the ZIP.',
+      'mod-android-step2': 'Open MT Manager. On the left side, open the Downloads folder and find the mod folder.',
+      'mod-android-step3': 'On the right side, open Android > data > com.multicraft.game > files > mods.',
+      'mod-android-step4': 'On the left side, long-press the mod folder and tap "move ->".',
+      'mod-android-step5': 'Open MultiCraft. In the "Singleplayer" menu, tap "Free mods here". Find the mod and tap the green checkmark. You can now play with the mod!',
+
+      // Mod - iOS/macOS
+      'mod-ios-title': '🧩 Install a mod on iOS / macOS',
+      'mod-ios-disclaimer': 'No one on our team uses iOS or macOS, so we are not sure if this tutorial is accurate. Sorry :(',
+      'mod-ios-step1': 'Download the mod of your choice and extract the zip. Then copy the folder.',
+      'mod-ios-step2': 'In "On My iPhone" or "On My iPad", locate the MultiCraft folder. Open it, then open the mods folder. Paste the mod folder.',
+      'mod-ios-step3': 'Open MultiCraft. In the "Singleplayer" menu, click "Free mods here". Find the mod and click the green checkmark. You can now play with the mod!',
+
+      // Mod - Windows/Linux
+      'mod-windows-title': '🧩 Install a mod on Windows',
+      'mod-windows-impossible': 'Not possible — the Windows version of MultiCraft does not have single-player mode.',
+      'mod-linux-title': '🧩 Install a mod on Linux',
+      'mod-linux-impossible': 'Not possible — the Windows version of MultiCraft (used via Wine) does not have single-player mode.',
+
+      // Texture - Windows
+      'texture-windows-title': '🎨 Install a texture pack on Windows',
+      'texture-windows-step1': 'Download the pack of your choice and extract the zip. Then copy the folder.',
+      'texture-windows-step2': 'In the Windows (C:) drive, click Users > your username > AppData > Roaming > MultiCraft > textures. Paste the pack folder.',
+      'texture-windows-step3': 'Open MultiCraft, go to Settings > "Texture packs". Find your pack and click the green checkmark. You can now play with it in singleplayer and multiplayer!',
+
+      // Texture - Linux
+      'texture-linux-title': '🎨 Install a texture pack on Linux',
+      'texture-linux-note': 'These instructions are based on using Wine, as MultiCraft does not offer a native Linux version.',
+      'texture-linux-step1': 'Download the pack of your choice and extract the zip. Then copy the folder.',
+      'texture-linux-step2': 'Go to your home folder (/home/yourname). Click "View" > "Show hidden files". Find the ".wine" folder. Open it, then drive_c > Program Files > MultiCraft > textures. Paste the pack folder.',
+      'texture-linux-step3': 'Open MultiCraft, go to Settings > "Texture packs". Find your pack and click the green checkmark. You can now play with it in singleplayer and multiplayer!',
+
+      // Texture - Android
+      'texture-android-title': '🎨 Install a texture pack on Android',
+      'texture-android-req-title': 'You will need:',
+      'texture-android-req-1': 'Either a file manager that supports app data access, like MT Manager',
+      'texture-android-req-2': 'Or a computer and a cable',
+      'texture-android-note': 'Here are the detailed steps for MT Manager.',
+      'texture-android-step1': 'Download the pack of your choice and extract the ZIP.',
+      'texture-android-step2': 'Open MT Manager. On the left side, open the Downloads folder and find the pack folder.',
+      'texture-android-step3': 'On the right side, open Android > data > com.multicraft.game > files > textures.',
+      'texture-android-step4': 'On the left side, long-press the pack folder and tap "move ->".',
+      'texture-android-step5': 'Open MultiCraft, go to Settings > "Texture packs". Find the pack and tap the green checkmark. Play in singleplayer and multiplayer!',
+
+      // Texture - iOS/macOS
+      'texture-ios-title': '🎨 Install a texture pack on iOS / macOS',
+      'texture-ios-disclaimer': 'No one on our team uses iOS or macOS, so we are not sure if this tutorial is accurate. Sorry :(',
+      'texture-ios-step1': 'Download the pack of your choice and extract the zip. Then copy the folder.',
+      'texture-ios-step2': 'In "On My iPhone" or "On My iPad", locate the MultiCraft folder. Open it, then open the textures folder. Paste the pack folder.',
+      'texture-ios-step3': 'Open MultiCraft, go to Settings > "Texture packs". Find the pack and click the green checkmark. Play in singleplayer and multiplayer!'
+    }
+  };
+
+  var currentLang = 'fr';
+  var currentType = null;
+  var currentOs = null;
+
+  // ========== DOM REFS ==========
+  var langBtns = document.querySelectorAll('.lang-btn');
+  var steps = {
+    1: document.getElementById('step-1'),
+    2: document.getElementById('step-2'),
+    3: document.getElementById('step-3')
+  };
+  var breadcrumbSteps = document.querySelectorAll('#tuto-breadcrumb span[data-step]');
+
+  // ========== LANGUAGE ==========
+  function t(key) {
+    return translations[currentLang] && translations[currentLang][key] !== undefined
+      ? translations[currentLang][key]
+      : (translations.fr[key] || key);
+  }
+
+  function detectLanguage() {
+    var saved = localStorage.getItem('multidb-lang');
+    if (saved === 'en' || saved === 'fr') return saved;
+    var browserLang = (navigator.language || navigator.userLanguage).substring(0, 2).toLowerCase();
+    return (browserLang === 'en' || browserLang === 'fr') ? browserLang : 'fr';
+  }
+
+  function updateUI() {
+    document.documentElement.lang = currentLang;
+    document.title = t('page-title');
+    document.querySelector('meta[name="description"]').content = t('page-desc');
+    document.getElementById('tuto-title').innerHTML = '<span class="gradient-text">' + t('tuto-title') + '</span>';
+    document.getElementById('tuto-subtitle').textContent = t('tuto-subtitle');
+    document.getElementById('bc-type').textContent = t('bc-type');
+    document.getElementById('bc-os').textContent = t('bc-os');
+    document.getElementById('bc-result').textContent = t('bc-result');
+    document.getElementById('q1-title').textContent = t('q1-title');
+    document.getElementById('q1-sub').textContent = t('q1-sub');
+    document.getElementById('choice-mod').textContent = t('choice-mod');
+    document.getElementById('choice-mod-sub').textContent = t('choice-mod-sub');
+    document.getElementById('choice-texture').textContent = t('choice-texture');
+    document.getElementById('choice-texture-sub').textContent = t('choice-texture-sub');
+    document.getElementById('q2-title').textContent = t('q2-title');
+    document.getElementById('q2-sub').textContent = t('q2-sub');
+    document.getElementById('os-help').textContent = t('os-help');
+    document.getElementById('os-ios-label').textContent = t('os-ios-label');
+    document.getElementById('os-win-label').textContent = t('os-win-label');
+    document.getElementById('restart-label').textContent = t('restart-label');
+    document.getElementById('back-label').textContent = t('back-label');
+    document.getElementById('footer-text').textContent = t('footer-text');
+
+    // Re-render result if we're on step 3
+    if (steps[3].classList.contains('active') && currentType && currentOs) {
+      renderResult();
+    }
+  }
+
+  function setLanguage(lang) {
+    if (lang !== 'en' && lang !== 'fr') return;
+    currentLang = lang;
+    localStorage.setItem('multidb-lang', lang);
+    langBtns.forEach(function (btn) {
+      if (btn.getAttribute('data-lang') === lang) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    });
+    updateUI();
+  }
+
+  // ========== STEP NAVIGATION ==========
+  function goToStep(step) {
+    Object.keys(steps).forEach(function (s) {
+      steps[s].classList.toggle('active', parseInt(s) === step);
+    });
+    breadcrumbSteps.forEach(function (el) {
+      var s = parseInt(el.getAttribute('data-step'));
+      el.classList.toggle('active-step', s === step);
+    });
+  }
+
+  // ========== RENDER RESULT ==========
+  function renderResult() {
+    var type = currentType;
+    var os = currentOs;
+    var container = document.getElementById('tuto-result-content');
+    var html = '';
+
+    if (type === 'mod') {
+      if (os === 'windows') {
+        html = '<div class="tuto-result"><h3>' + t('mod-windows-title') + '</h3><div class="impossible">' + t('mod-windows-impossible') + '</div></div>';
+      } else if (os === 'linux') {
+        html = '<div class="tuto-result"><h3>' + t('mod-linux-title') + '</h3><div class="impossible">' + t('mod-linux-impossible') + '</div></div>';
+      } else if (os === 'android') {
+        html = '<div class="tuto-result"><h3>' + t('mod-android-title') + '</h3>'
+          + '<p>' + t('mod-android-intro') + '</p>'
+          + '<p><strong>' + t('mod-android-req-title') + '</strong></p>'
+          + '<ul><li>' + t('mod-android-req-1') + '</li><li>' + t('mod-android-req-2') + '</li></ul>'
+          + '<span class="note">' + t('mod-android-note') + '</span>'
+          + '<ol style="margin-top:1rem;padding-left:1.2rem;"><li>' + t('mod-android-step1') + '</li><li>' + t('mod-android-step2') + '</li><li>' + t('mod-android-step3') + '</li><li>' + t('mod-android-step4') + '</li><li>' + t('mod-android-step5') + '</li></ol>'
+          + '</div>';
+      } else if (os === 'ios') {
+        html = '<div class="tuto-result"><h3>' + t('mod-ios-title') + '</h3>'
+          + '<span class="warning">' + t('mod-ios-disclaimer') + '</span>'
+          + '<ol style="margin-top:1rem;padding-left:1.2rem;"><li>' + t('mod-ios-step1') + '</li><li>' + t('mod-ios-step2') + '</li><li>' + t('mod-ios-step3') + '</li></ol>'
+          + '</div>';
+      }
+    } else if (type === 'texture') {
+      if (os === 'windows') {
+        html = '<div class="tuto-result"><h3>' + t('texture-windows-title') + '</h3>'
+          + '<ol style="padding-left:1.2rem;"><li>' + t('texture-windows-step1') + '</li><li>' + t('texture-windows-step2') + '</li><li>' + t('texture-windows-step3') + '</li></ol>'
+          + '</div>';
+      } else if (os === 'linux') {
+        html = '<div class="tuto-result"><h3>' + t('texture-linux-title') + '</h3>'
+          + '<span class="note">' + t('texture-linux-note') + '</span>'
+          + '<ol style="margin-top:1rem;padding-left:1.2rem;"><li>' + t('texture-linux-step1') + '</li><li>' + t('texture-linux-step2') + '</li><li>' + t('texture-linux-step3') + '</li></ol>'
+          + '</div>';
+      } else if (os === 'android') {
+        html = '<div class="tuto-result"><h3>' + t('texture-android-title') + '</h3>'
+          + '<p><strong>' + t('texture-android-req-title') + '</strong></p>'
+          + '<ul><li>' + t('texture-android-req-1') + '</li><li>' + t('texture-android-req-2') + '</li></ul>'
+          + '<span class="note">' + t('texture-android-note') + '</span>'
+          + '<ol style="margin-top:1rem;padding-left:1.2rem;"><li>' + t('texture-android-step1') + '</li><li>' + t('texture-android-step2') + '</li><li>' + t('texture-android-step3') + '</li><li>' + t('texture-android-step4') + '</li><li>' + t('texture-android-step5') + '</li></ol>'
+          + '</div>';
+      } else if (os === 'ios') {
+        html = '<div class="tuto-result"><h3>' + t('texture-ios-title') + '</h3>'
+          + '<span class="warning">' + t('texture-ios-disclaimer') + '</span>'
+          + '<ol style="margin-top:1rem;padding-left:1.2rem;"><li>' + t('texture-ios-step1') + '</li><li>' + t('texture-ios-step2') + '</li><li>' + t('texture-ios-step3') + '</li></ol>'
+          + '</div>';
+      }
+    }
+
+    container.innerHTML = html;
+  }
+
+  // ========== EVENTS ==========
+
+  // Type choice
+  document.querySelectorAll('.tuto-choice-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      currentType = btn.getAttribute('data-type');
+      goToStep(2);
+    });
+  });
+
+  // OS choice
+  document.querySelectorAll('.tuto-os-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      currentOs = btn.getAttribute('data-os');
+      renderResult();
+      goToStep(3);
+    });
+  });
+
+  // Restart
+  document.getElementById('tuto-restart-btn').addEventListener('click', function () {
+    currentType = null;
+    currentOs = null;
+    goToStep(1);
+  });
+
+  // Language
+  langBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      setLanguage(btn.getAttribute('data-lang'));
+    });
+  });
+
+  // ========== INIT ==========
+  var savedLang = localStorage.getItem('multidb-lang');
+  currentLang = savedLang || detectLanguage();
+  setLanguage(currentLang);
+  goToStep(1);
+
+  // ========== CURSOR HALO ==========
+  var halo = document.getElementById('cursor-halo');
+  if (halo && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    window.addEventListener('mousemove', function (e) {
+      document.body.classList.add('cursor-active');
+      halo.style.transform = 'translate(' + (e.clientX - 50) + 'px, ' + (e.clientY - 50) + 'px)';
+    });
+    document.addEventListener('mouseleave', function () {
+      document.body.classList.remove('cursor-active');
+    });
+  }
+
+})();
+</script>
+</body>
+</html>
