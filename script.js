@@ -36,7 +36,10 @@
       'post-mod-title': 'Poster un mod',
       'post-mod-text': 'Pour poster un mod, envoie un message sur Discord à <strong>.lucas76.</strong> ou un mail à <a href="mailto:creatif.france@outlook.com">creatif.france@outlook.com</a>.',
       'post-mod-close': 'Fermer',
-      'tuto-button': '📖 Tutoriel'
+      'tuto-button': '📖 Tutoriel',
+      'survey-text': "Hey ! L'équipe de MultiDB aimerais connaitre votre avis sur le site. Si vous le souhaitez, un sondage qui ne prend pas plus d'une minute a été créé. Un grand merci à vous",
+      'survey-btn': '🤝 Donner mon avis',
+      'survey-skip': 'Plus tard'
     },
     en: {
       'hero-title-start': 'Mods',
@@ -67,7 +70,10 @@
       'post-mod-title': 'Post a mod',
       'post-mod-text': 'To post a mod, send a message on Discord to <strong>.lucas76.</strong> or an email to <a href="mailto:creatif.france@outlook.com">creatif.france@outlook.com</a>.',
       'post-mod-close': 'Close',
-      'tuto-button': '📖 Tutorial'
+      'tuto-button': '📖 Tutorial',
+      'survey-text': 'Hey! The MultiDB team would like to know your opinion about the site. If you wish, a survey that takes no more than a minute has been created. Many thanks to you',
+      'survey-btn': '🤝 Give my opinion',
+      'survey-skip': 'Later'
     }
   };
 
@@ -133,6 +139,14 @@
     document.getElementById('post-mod-close').setAttribute('aria-label', t('post-mod-close'));
     var tutoBtn = document.getElementById('tuto-btn');
     if (tutoBtn) tutoBtn.textContent = t('tuto-button');
+    var surveyTextEl = document.getElementById('survey-text');
+    if (surveyTextEl) surveyTextEl.textContent = t('survey-text');
+    var surveyLinkEl = document.getElementById('survey-link');
+    if (surveyLinkEl) surveyLinkEl.textContent = t('survey-btn');
+    var surveySkipEl = document.getElementById('survey-skip');
+    if (surveySkipEl) surveySkipEl.textContent = t('survey-skip');
+    var surveyCloseEl = document.getElementById('survey-close');
+    if (surveyCloseEl) surveyCloseEl.setAttribute('aria-label', t('post-mod-close'));
   }
 
   function updateLangButtons() {
@@ -466,4 +480,37 @@ discordHtml =
         'translate(' + (e.clientX - 50) + 'px, ' + (e.clientY - 50) + 'px)';
     });
   }
+
+  // ========== SURVEY POPUP ==========
+  var surveyOverlay = document.getElementById('survey-overlay');
+  var surveyCloseBtn = document.getElementById('survey-close');
+  var surveySkipBtn = document.getElementById('survey-skip');
+  var surveyLinkBtn = document.getElementById('survey-link');
+
+  function showSurveyPopup() {
+    if (!surveyOverlay) return;
+    if (localStorage.getItem('multidb-survey-dismissed')) return;
+    surveyOverlay.classList.add('active');
+  }
+
+  function closeSurvey() {
+    if (surveyOverlay) surveyOverlay.classList.remove('active');
+  }
+
+  function dismissSurvey() {
+    closeSurvey();
+    localStorage.setItem('multidb-survey-dismissed', 'true');
+  }
+
+  if (surveyCloseBtn) surveyCloseBtn.addEventListener('click', dismissSurvey);
+  if (surveySkipBtn) surveySkipBtn.addEventListener('click', dismissSurvey);
+  if (surveyOverlay) surveyOverlay.addEventListener('click', function (e) {
+    if (e.target === surveyOverlay) dismissSurvey();
+  });
+  if (surveyLinkBtn) surveyLinkBtn.addEventListener('click', dismissSurvey);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') dismissSurvey();
+  });
+
+  setTimeout(showSurveyPopup, 1500);
 })();

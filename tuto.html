@@ -315,7 +315,7 @@
         <h2 id="q2-title">Quel est ton système d'exploitation ?</h2>
         <p id="q2-sub">Sélectionne la plateforme sur laquelle tu joues.</p>
       </div>
-      <div class="tuto-os-help" id="os-help">iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android · PC sans logo pomme = Windows/Linux</div>
+      <div class="tuto-os-help" id="os-help">iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android</div>
       <div class="tuto-os-list">
         <button type="button" class="tuto-os-btn" data-os="android">
           <span class="icon">📱</span>
@@ -324,14 +324,6 @@
         <button type="button" class="tuto-os-btn" data-os="ios">
           <span class="icon">🍎</span>
           <span id="os-ios-label">iOS / macOS</span>
-        </button>
-        <button type="button" class="tuto-os-btn" data-os="windows">
-          <span class="icon">🪟</span>
-          <span id="os-win-label">Windows</span>
-        </button>
-        <button type="button" class="tuto-os-btn" data-os="linux">
-          <span class="icon">🐧</span>
-          <span>Linux</span>
         </button>
       </div>
     </div>
@@ -374,7 +366,7 @@
       'choice-texture-sub': "Change l'apparence du jeu",
       'q2-title': "Quel est ton système d'exploitation ?",
       'q2-sub': 'Sélectionne la plateforme sur laquelle tu joues.',
-      'os-help': 'iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android · PC sans logo pomme = Windows/Linux',
+      'os-help': 'iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android',
       'os-ios-label': 'iOS / macOS',
       'os-win-label': 'Windows',
       'restart-label': 'Recommencer',
@@ -437,7 +429,11 @@
       'texture-ios-disclaimer': "Aucun membre de notre équipe n'est sur iOS / macOS donc nous ne savons pas si ce tutoriel est précis. Désolés :(",
       'texture-ios-step1': "Télécharge le pack de ton choix et extrais le zip. Ensuite copie le dossier.",
       'texture-ios-step2': "Dans « Mon iPhone » ou « Mon iPad », trouve le dossier MultiCraft. Ouvre-le et ouvre le dossier textures. Ensuite colle le dossier du pack.",
-      'texture-ios-step3': "Ouvre MultiCraft, dans les paramètres clique sur « Packs de textures ». Cherche le pack de texture que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le pack de texture en solo et en multijoueur !"
+      'texture-ios-step3': "Ouvre MultiCraft, dans les paramètres clique sur « Packs de textures ». Cherche le pack de texture que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le pack de texture en solo et en multijoueur !",
+
+      'survey-text': "Hey ! L'équipe de MultiDB aimerais connaitre votre avis sur le site. Si vous le souhaitez, un sondage qui ne prend pas plus d'une minute a été créé. Un grand merci à vous",
+      'survey-btn': '🤝 Donner mon avis',
+      'survey-skip': 'Plus tard'
     },
 
     en: {
@@ -456,7 +452,7 @@
       'choice-texture-sub': "Changes the game's look",
       'q2-title': 'What is your operating system?',
       'q2-sub': 'Select the platform you play on.',
-      'os-help': 'iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android · PC without Apple logo = Windows/Linux',
+      'os-help': 'iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android',
       'os-ios-label': 'iOS / macOS',
       'os-win-label': 'Windows',
       'restart-label': 'Restart',
@@ -519,7 +515,11 @@
       'texture-ios-disclaimer': 'No one on our team uses iOS or macOS, so we are not sure if this tutorial is accurate. Sorry :(',
       'texture-ios-step1': 'Download the pack of your choice and extract the zip. Then copy the folder.',
       'texture-ios-step2': 'In "On My iPhone" or "On My iPad", locate the MultiCraft folder. Open it, then open the textures folder. Paste the pack folder.',
-      'texture-ios-step3': 'Open MultiCraft, go to Settings > "Texture packs". Find the pack and click the green checkmark. Play in singleplayer and multiplayer!'
+      'texture-ios-step3': 'Open MultiCraft, go to Settings > "Texture packs". Find the pack and click the green checkmark. Play in singleplayer and multiplayer!',
+
+      'survey-text': "Hey! The MultiDB team would like to know your opinion about the site. If you wish, a survey that takes no more than a minute has been created. Many thanks to you",
+      'survey-btn': '🤝 Give my opinion',
+      'survey-skip': 'Later'
     }
   };
 
@@ -569,10 +569,18 @@
     document.getElementById('q2-sub').textContent = t('q2-sub');
     document.getElementById('os-help').textContent = t('os-help');
     document.getElementById('os-ios-label').textContent = t('os-ios-label');
-    document.getElementById('os-win-label').textContent = t('os-win-label');
     document.getElementById('restart-label').textContent = t('restart-label');
     document.getElementById('back-label').textContent = t('back-label');
     document.getElementById('footer-text').textContent = t('footer-text');
+
+    var surveyTextEl = document.getElementById('survey-text');
+    if (surveyTextEl) surveyTextEl.textContent = t('survey-text');
+    var surveyLinkEl = document.getElementById('survey-link');
+    if (surveyLinkEl) surveyLinkEl.textContent = t('survey-btn');
+    var surveySkipEl = document.getElementById('survey-skip');
+    if (surveySkipEl) surveySkipEl.textContent = t('survey-skip');
+    var surveyCloseEl = document.getElementById('survey-close');
+    if (surveyCloseEl) surveyCloseEl.setAttribute('aria-label', currentLang === 'fr' ? 'Fermer' : 'Close');
 
     // Re-render result if we're on step 3
     if (steps[3].classList.contains('active') && currentType && currentOs) {
@@ -710,7 +718,51 @@
     });
   }
 
+  // ========== SURVEY POPUP ==========
+  var surveyOverlay = document.getElementById('survey-overlay');
+  var surveyCloseBtn = document.getElementById('survey-close');
+  var surveySkipBtn = document.getElementById('survey-skip');
+  var surveyLinkBtn = document.getElementById('survey-link');
+
+  function showSurveyPopup() {
+    if (!surveyOverlay) return;
+    if (localStorage.getItem('multidb-survey-dismissed')) return;
+    surveyOverlay.classList.add('active');
+  }
+
+  function closeSurvey() {
+    if (surveyOverlay) surveyOverlay.classList.remove('active');
+  }
+
+  function dismissSurvey() {
+    closeSurvey();
+    localStorage.setItem('multidb-survey-dismissed', 'true');
+  }
+
+  if (surveyCloseBtn) surveyCloseBtn.addEventListener('click', dismissSurvey);
+  if (surveySkipBtn) surveySkipBtn.addEventListener('click', dismissSurvey);
+  if (surveyOverlay) surveyOverlay.addEventListener('click', function (e) {
+    if (e.target === surveyOverlay) dismissSurvey();
+  });
+  if (surveyLinkBtn) surveyLinkBtn.addEventListener('click', dismissSurvey);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') dismissSurvey();
+  });
+
+  setTimeout(showSurveyPopup, 1500);
 })();
 </script>
+
+<div class="survey-overlay" id="survey-overlay">
+  <div class="survey-modal">
+    <button type="button" class="survey-close" id="survey-close" aria-label="Fermer">✕</button>
+    <p id="survey-text">Hey ! L'équipe de MultiDB aimerais connaitre votre avis sur le site. Si vous le souhaitez, un sondage qui ne prend pas plus d'une minute a été créé. Un grand merci à vous</p>
+    <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 1.25rem;">
+      <a href="https://framaforms.org/multidb-1785415778" class="survey-btn" id="survey-link" target="_blank" rel="noopener noreferrer">🤝 Donner mon avis</a>
+      <button type="button" class="survey-skip" id="survey-skip">Plus tard</button>
+    </div>
+  </div>
+</div>
+
 </body>
 </html>
