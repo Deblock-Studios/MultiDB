@@ -513,4 +513,12 @@ discordHtml =
   });
 
   setTimeout(showSurveyPopup, 1500);
+
+  // ========== OMBRE DU HEADER AU SCROLL ==========
+  var siteHeader = document.querySelector('.site-header');
+  if (siteHeader) {
+    window.addEventListener('scroll', function () {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 8);
+    }, { passive: true });
+  }
 })();
