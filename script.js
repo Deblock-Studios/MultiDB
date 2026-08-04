@@ -37,7 +37,7 @@
       'post-mod-text': 'Pour poster un mod, envoie un message sur Discord à <strong>.lucas76.</strong> ou un mail à <a href="mailto:creatif.france@outlook.com">creatif.france@outlook.com</a>.',
       'post-mod-close': 'Fermer',
       'tuto-button': '📖 Tutoriel',
-      'survey-text': "Hey ! L'équipe de MultiDB aimerais connaitre votre avis sur le site. Si vous le souhaitez, un sondage qui ne prend pas plus d'une minute a été créé. Un grand merci à vous",
+      'survey-text': "Nous aimerions connaitre votre avis sur MultiDB. Nous avons créé un sondage : il ne dure pas plus d'une minute à remplir ! Un grand merci à ceux qui le feront, vous aidez le développement de MultiDB.",
       'survey-btn': '🤝 Donner mon avis',
       'survey-skip': 'Plus tard'
     },
@@ -71,7 +71,7 @@
       'post-mod-text': 'To post a mod, send a message on Discord to <strong>.lucas76.</strong> or an email to <a href="mailto:creatif.france@outlook.com">creatif.france@outlook.com</a>.',
       'post-mod-close': 'Close',
       'tuto-button': '📖 Tutorial',
-      'survey-text': 'Hey! The MultiDB team would like to know your opinion about the site. If you wish, a survey that takes no more than a minute has been created. Many thanks to you',
+      'survey-text': 'We would love to know your opinion on MultiDB. We created a survey: it takes no more than a minute to fill out! Many thanks to those who will do it, you help develop MultiDB.',
       'survey-btn': '🤝 Give my opinion',
       'survey-skip': 'Later'
     }
