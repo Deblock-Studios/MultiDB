@@ -89,5 +89,17 @@
       "fr": "Ce mod ajoute un coffre bonus à votre monde.",
       "en": "This mod add a bonus chest to your world"
     }
+  },
+  {
+    "id": "multicraft_legacy",
+    "category": "game",
+    "name": "MultiCraft Game Legacy",
+    "author": "Catman2608 (GitHub)",
+    "image": "https://github.com/Catman2608/Multicraft_game_legacy/blob/master/screenshot.png?raw=true",
+    "download": "https://files.catbox.moe/yh5dw4.zip",
+    "description": {
+      "fr": "L'ancien MultiCraft Game pour Luanti.",
+      "en": "The old MultiCraft Game for Luanti."
+    }
   }
   ]

@@ -15,6 +15,7 @@
       'filter-all': 'Tout',
       'filter-mods': 'Mods',
       'filter-textures': 'Packs de textures',
+      'filter-games': 'Jeux',
       'loading-label': 'Chargement…',
       'loading-mods': 'Chargement des mods…',
       'error-load': 'Impossible de charger la liste des mods. Réessaie plus tard.',
@@ -49,6 +50,7 @@
       'filter-all': 'All',
       'filter-mods': 'Mods',
       'filter-textures': 'Texture Packs',
+      'filter-games': 'Games',
       'loading-label': 'Loading…',
       'loading-mods': 'Loading mods…',
       'error-load': 'Failed to load the mod list. Try again later.',
@@ -130,6 +132,7 @@
       if (category === 'all') btn.textContent = t('filter-all');
       else if (category === 'mod') btn.textContent = t('filter-mods');
       else if (category === 'texture') btn.textContent = t('filter-textures');
+      else if (category === 'game') btn.textContent = t('filter-games');
     });
     document.getElementById('back-btn').textContent = t('back-button');
     document.getElementById('footer-text').textContent = t('footer-text');
