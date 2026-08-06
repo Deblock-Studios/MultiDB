@@ -26,4 +26,10 @@
        <changefreq>daily</changefreq>
        <priority>0.6400</priority>
   </url>
+  <url>
+       <loc>https://multidb.vercel.app/legal.html</loc>
+       <lastmod>2026-08-06T00:00:00+00:00</lastmod>
+       <changefreq>monthly</changefreq>
+       <priority>0.3000</priority>
+  </url>
 </urlset>

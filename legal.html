@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal — MultiDB</title>
+<meta name="description" content="Legal notice and privacy policy for MultiDB, the community store of mods and textures for MultiCraft.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .legal-section {
+    margin-bottom: 3rem;
+  }
+
+  .legal-section h2 {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    margin-bottom: 1.25rem;
+    position: relative;
+    display: inline-block;
+  }
+
+  .legal-section h2::after {
+    content: '';
+    display: block;
+    margin-top: 0.4rem;
+    height: 2px;
+    width: 100%;
+    background: linear-gradient(90deg, var(--green-dim), transparent);
+    border-radius: 2px;
+  }
+
+  .legal-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.75rem 2rem;
+    color: var(--text-muted);
+    line-height: 1.8;
+    font-size: 1rem;
+  }
+
+  .legal-card p + p {
+    margin-top: 0.85rem;
+  }
+
+  .legal-card a {
+    color: var(--green);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(34, 197, 94, 0.3);
+    transition: border-color var(--transition), color var(--transition);
+  }
+
+  .legal-card a:hover {
+    color: var(--green-dim);
+    border-color: var(--green-dim);
+  }
+
+  .legal-list {
+    list-style: none;
+    margin-top: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+
+  .legal-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
+  .legal-list .lbl {
+    color: var(--text-dim);
+    text-transform: uppercase;
+    font-size: 0.72rem;
+    letter-spacing: 0.06em;
+    flex-shrink: 0;
+    min-width: 120px;
+    padding-top: 0.35rem;
+  }
+
+  .legal-list .val {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+  }
+
+  .legal-contact {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .legal-contact a {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.65rem 1.25rem;
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius-sm);
+    color: var(--green);
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    background: rgba(34, 197, 94, 0.05);
+    transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  }
+
+  .legal-contact a:hover {
+    background: rgba(34, 197, 94, 0.12);
+    border-color: var(--green);
+    transform: translateY(-2px);
+  }
+
+  @media (max-width: 560px) {
+    .legal-card {
+      padding: 1.25rem 1.1rem;
+    }
+
+    .legal-list li {
+      flex-direction: column;
+      gap: 0.1rem;
+    }
+
+    .legal-list .lbl {
+      min-width: 0;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="grid-bg"></div>
+<div id="cursor-halo"></div>
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <img src="icon.png" alt="Logo" style="width: 2em; height: 2em; vertical-align: middle;" />
+      <span class="logo-text">Multi<em>DB</em></span>
+    </a>
+    <div style="display:flex; gap: 0.75rem; align-items:center; flex-shrink: 0;">
+      <a href="index.html" class="btn btn-ghost" id="back-home" style="padding: 0.55rem 1.1rem; font-size: 0.88rem;">← Accueil</a>
+      <div class="lang-switch" id="lang-switch" role="group" aria-label="Choix de la langue">
+        <button type="button" class="lang-btn active" data-lang="fr">🇫🇷</button>
+        <button type="button" class="lang-btn" data-lang="en">🇬🇧</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main id="app">
+  <div class="page active">
+
+    <!-- Hero -->
+    <div class="page-header" style="margin-bottom: 2.5rem;">
+      <h1 id="legal-title">Légal</h1>
+      <p id="legal-subtitle" style="color: var(--text-muted);">Legal notices and privacy policy for MultiDB.</p>
+    </div>
+
+    <!-- Legal notices (mentions légales) -->
+    <section class="legal-section">
+      <h2 id="legal-owner-title">Publisher</h2>
+      <div class="legal-card">
+        <p id="legal-owner-text">
+          This website is managed by
+          <a href="https://deblock-studios.vercel.app/" target="_blank" rel="noopener noreferrer">Deblock Studios</a>,
+          an independent community of creators. MultiDB is not affiliated with the editor of MultiCraft.
+        </p>
+
+        <ul class="legal-list">
+          <li>
+            <span class="lbl" id="lbl-email">Contact</span>
+            <span class="val">creatif.france@outlook.com</span>
+          </li>
+          <li>
+            <span class="lbl" id="lbl-hosting">Hosting</span>
+            <span class="val" id="legal-hosting-text">The website is hosted by Vercel.</span>
+          </li>
+          <li>
+            <span class="lbl" id="lbl-files">Files</span>
+            <span class="val" id="legal-files-text">Mods and texture packs are hosted on Catbox or Google Drive, mostly on Catbox.</span>
+          </li>
+        </ul>
+
+        <div class="legal-contact">
+          <a href="mailto:creatif.france@outlook.com">
+            ✉️ creatif.france@outlook.com
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Privacy policy -->
+    <section class="legal-section">
+      <h2 id="privacy-title">Privacy policy</h2>
+      <div class="legal-card">
+        <p id="privacy-first">
+          We respect your privacy. MultiDB is a free and ad-free store, and we do not collect any personal data that could identify you.
+        </p>
+        <p id="privacy-second">
+          To understand how our store is used and to improve it, we measure site visits and the number of downloads
+          using <strong style="color: var(--text);">Simple Analytics</strong> and
+          <strong style="color: var(--text);">GoatCounter</strong>.
+          Both tools are privacy-first: they do not use cookies and do not collect personal information.
+        </p>
+        <p id="privacy-third">
+          We do not sell, share or trade your data with third parties. Our servers, websites and files are hosted by
+          <strong style="color: var(--text);">Vercel</strong>, <strong style="color: var(--text);">Catbox</strong> and
+          <strong style="color: var(--text);">Google Drive</strong>.
+        </p>
+      </div>
+    </section>
+
+  </div>
+</main>
+
+<footer class="site-footer">
+  <p id="footer-text">MultiDB — Store communautaire de mods et textures pour MultiCraft. Non affilié à l'éditeur du jeu.</p>
+  <a href="https://multidb.vercel.app/about.html">About</a>.
+  <a href="dmca.html">DMCA</a>.
+  <a href="https://github.com/Deblock-Studios/MultiDB">GitHub</a>.
+  <br><a href="https://deblock-studios.vercel.app/" class="btn-deblock" target="_blank">Deblock Studios</a>
+</footer>
+
+<script>
+  // ========== LANGUE & SURVEY ==========
+  (function () {
+    'use strict';
+
+    var translations = {
+      fr: {
+        'page-title': 'Légal — MultiDB',
+        'title': 'Légal',
+        'subtitle': 'Mentions légales et politique de confidentialité de MultiDB.',
+        'back': '← Accueil',
+        'survey-text': "Hey ! L'équipe de MultiDB aimerais connaitre votre avis sur le site. Si vous le souhaitez, un sondage qui ne prend pas plus d'une minute a été créé. Un grand merci à vous",
+        'survey-btn': '🤝 Donner mon avis',
+        'survey-skip': 'Plus tard',
+        'survey-close': 'Fermer',
+        'footer-text': 'MultiDB — Store communautaire de mods et textures pour MultiCraft. Non affilié à l\'éditeur du jeu.'
+      },
+      en: {
+        'page-title': 'Legal — MultiDB',
+        'title': 'Legal',
+        'subtitle': 'Legal notices and privacy policy for MultiDB.',
+        'back': '← Home',
+        'survey-text': "Hey! The MultiDB team would like to know your opinion about the site. If you wish, a survey that takes no more than a minute has been created. Many thanks to you",
+        'survey-btn': '🤝 Give my opinion',
+        'survey-skip': 'Later',
+        'survey-close': 'Close',
+        'footer-text': 'MultiDB — Community store of mods and textures for MultiCraft. Not affiliated with MultiCraft.'
+      }
+    };
+
+    var currentLang = 'fr';
+
+    function t(key) {
+      return translations[currentLang][key] || translations.fr[key] || key;
+    }
+
+    function detectLanguage() {
+      var saved = localStorage.getItem('multidb-lang');
+      if (saved === 'en' || saved === 'fr') return saved;
+      var browserLang = (navigator.language || navigator.userLanguage).substring(0, 2).toLowerCase();
+      return (browserLang === 'en' || browserLang === 'fr') ? browserLang : 'fr';
+    }
+
+    function setLanguage(lang) {
+      if (lang !== 'en' && lang !== 'fr') return;
+      currentLang = lang;
+      localStorage.setItem('multidb-lang', lang);
+      document.documentElement.lang = lang;
+      document.title = t('page-title');
+      document.getElementById('legal-title').textContent = t('title');
+      document.getElementById('legal-subtitle').textContent = t('subtitle');
+      document.getElementById('back-home').textContent = t('back');
+      document.getElementById('footer-text').textContent = t('footer-text');
+      var surveyTextEl = document.getElementById('survey-text');
+      if (surveyTextEl) surveyTextEl.textContent = t('survey-text');
+      var surveyLinkEl = document.getElementById('survey-link');
+      if (surveyLinkEl) surveyLinkEl.textContent = t('survey-btn');
+      var surveySkipEl = document.getElementById('survey-skip');
+      if (surveySkipEl) surveySkipEl.textContent = t('survey-skip');
+      var surveyCloseEl = document.getElementById('survey-close');
+      if (surveyCloseEl) surveyCloseEl.setAttribute('aria-label', t('survey-close'));
+      document.querySelectorAll('.lang-btn').forEach(function (btn) {
+        btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+      });
+    }
+
+    currentLang = detectLanguage();
+
+    document.querySelectorAll('.lang-btn').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        setLanguage(btn.getAttribute('data-lang'));
+      });
+    });
+
+    setLanguage(currentLang);
+
+    // Survey popup
+    var surveyOverlay = document.getElementById('survey-overlay');
+    var surveyCloseBtn = document.getElementById('survey-close');
+    var surveySkipBtn = document.getElementById('survey-skip');
+    var surveyLinkBtn = document.getElementById('survey-link');
+
+    function showSurveyPopup() {
+      if (!surveyOverlay) return;
+      if (localStorage.getItem('multidb-survey-dismissed')) return;
+      surveyOverlay.classList.add('active');
+    }
+
+    function closeSurvey() {
+      if (surveyOverlay) surveyOverlay.classList.remove('active');
+    }
+
+    function dismissSurvey() {
+      closeSurvey();
+      localStorage.setItem('multidb-survey-dismissed', 'true');
+    }
+
+    if (surveyOverlay) {
+      if (surveyCloseBtn) surveyCloseBtn.addEventListener('click', dismissSurvey);
+      if (surveySkipBtn) surveySkipBtn.addEventListener('click', dismissSurvey);
+      surveyOverlay.addEventListener('click', function (e) {
+        if (e.target === surveyOverlay) dismissSurvey();
+      });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') dismissSurvey();
+      });
+      if (surveyLinkBtn) surveyLinkBtn.addEventListener('click', dismissSurvey);
+    }
+
+    setTimeout(showSurveyPopup, 1500);
+
+    // Cursor halo (same as main site)
+    var halo = document.getElementById('cursor-halo');
+    if (halo) {
+      document.addEventListener('mousemove', function (e) {
+        halo.style.transform = 'translate(' + (e.clientX - 50) + 'px, ' + (e.clientY - 50) + 'px)';
+        document.body.classList.add('cursor-active');
+      });
+      document.addEventListener('mouseleave', function () {
+        document.body.classList.remove('cursor-active');
+      });
+    }
+  })();
+</script>
+
+<div class="survey-overlay" id="survey-overlay">
+  <div class="survey-modal">
+    <button type="button" class="survey-close" id="survey-close" aria-label="Fermer">✕</button>
+    <p id="survey-text">Hey ! L'équipe de MultiDB aimerais connaitre votre avis sur le site. Si vous le souhaitez, un sondage qui ne prend pas plus d'une minute a été créé. Un grand merci à vous</p>
+    <div style="display: flex; gap: 0.75rem; align-items: center; margin-top: 1.25rem;">
+      <a href="https://framaforms.org/multidb-1785415778" class="survey-btn" id="survey-link" target="_blank" rel="noopener noreferrer">🤝 Donner mon avis</a>
+      <button type="button" class="survey-skip" id="survey-skip">Plus tard</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
