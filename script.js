@@ -220,7 +220,7 @@
     var q = (query || '').trim().toLowerCase();
 
     var filtered = mods.filter(function (mod) {
-      var matchesQuery = !q || 
+      var matchesQuery = !q ||
         (mod.name || '').toLowerCase().indexOf(q) !== -1 ||
         (mod.author || '').toLowerCase().indexOf(q) !== -1 ||
         getLocalizedText(mod.description).toLowerCase().indexOf(q) !== -1;
@@ -301,12 +301,12 @@
     var discordHtml = '';
 
     if (mod.discord) {
-discordHtml =
-  '<button type="button" class="btn-discord" id="discord-copy-btn" data-username="' +
-  escapeHtml(mod.discord) +
-  '">' +
-  '<span class="discord-btn-label">' + t('discord-button') + '</span>' +
-  '</button>';
+      discordHtml =
+        '<button type="button" class="btn-discord" id="discord-copy-btn" data-username="' +
+        escapeHtml(mod.discord) +
+        '">' +
+        '<span class="discord-btn-label">' + t('discord-button') + '</span>' +
+        '</button>';
     }
 
     detailContent.innerHTML =
@@ -331,12 +331,12 @@ discordHtml =
       '</p>' +
       '</div>' +
       '<div class="mod-detail-actions">' +
-      '<a class="btn btn-primary" href="' +
+      '<a class="btn btn-primary download-btn" href="' +
       escapeHtml(mod.download) +
+      '" data-file="' +
+      escapeHtml(mod.name) +
       '">' + t('download-button') + '</a>' +
       '</div>';
-
-    document.title = name + ' ' + t('page-detail-title');
   }
 
   // ========== ROUTAGE ==========
@@ -394,6 +394,30 @@ discordHtml =
         label.textContent = t('discord-button');
       }, 1800);
     });
+  });
+
+  // ========== SUIVI DES TÉLÉCHARGEMENTS AVEC GOATCOUNTER ==========
+  detailContent.addEventListener('click', function (e) {
+    var downloadBtn = e.target.closest('.download-btn');
+    if (!downloadBtn) return;
+
+    var fileName = downloadBtn.getAttribute('data-file');
+    if (!fileName) return;
+
+    // Envoyer un événement à GoatCounter
+    if (typeof goatcounter !== 'undefined') {
+      goatcounter.count({
+        path: `Téléchargement: ${fileName}`,
+        title: `Téléchargement - ${fileName}`,
+        event: true,
+      });
+    }
+
+    // Rediriger après un court délai pour laisser le temps à GoatCounter d'enregistrer l'événement
+    var fileUrl = downloadBtn.getAttribute('href');
+    setTimeout(function () {
+      window.location.href = fileUrl;
+    }, 200);
   });
 
   var searchTimer = null;
