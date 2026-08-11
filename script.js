@@ -29,6 +29,8 @@
       'discord-copied': 'Nom d\'utilisateur copié !',
       'description-title': 'Description',
       'download-button': 'Télécharger',
+      'downloads-label-singular': 'téléchargement',
+      'downloads-label-plural': 'téléchargements',
       'footer-text': 'MultiDB — Store communautaire de mods et textures pour MultiCraft. Non affilié à MultiCraft.',
       'page-title': 'MultiDB — Mods & Textures pour MultiCraft',
       'page-description': 'MultiDB, le store communautaire de mods et textures pour MultiCraft.',
@@ -64,6 +66,8 @@
       'discord-copied': 'Username copied!',
       'description-title': 'Description',
       'download-button': 'Download',
+      'downloads-label-singular': 'download',
+      'downloads-label-plural': 'downloads',
       'footer-text': 'MultiDB — Community store of mods and textures for MultiCraft. Not affiliated with MultiCraft.',
       'page-title': 'MultiDB — Mods & Textures for MultiCraft',
       'page-description': 'MultiDB, the community store of mods and textures for MultiCraft.',
@@ -83,6 +87,7 @@
   var mods = [];
   var loadError = false;
   var currentFilter = 'all';
+  var downloadCounts = {};
 
   var modsListEl = document.getElementById('mods-list');
   var modsCountEl = document.getElementById('mods-count');
@@ -191,6 +196,27 @@
     return field || '';
   }
 
+  function getDownloadCount(mod) {
+    if (!mod) return 0;
+    var count = downloadCounts[mod.name];
+    return typeof count === 'number' ? count : 0;
+  }
+
+  function formatCount(count) {
+    var locale = currentLang === 'fr' ? 'fr-FR' : 'en-US';
+    return count.toLocaleString(locale);
+  }
+
+  function downloadIcon() {
+    return (
+      '<svg class="dl-icon" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' +
+      '<path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>' +
+      '<polyline points="7 10 12 15 17 10"/>' +
+      '<line x1="12" y1="15" x2="12" y2="3"/>' +
+      '</svg>'
+    );
+  }
+
   function copyToClipboard(text) {
     if (navigator.clipboard && navigator.clipboard.writeText) {
       return navigator.clipboard.writeText(text);
@@ -275,6 +301,12 @@
           '<span class="mod-card-excerpt">' +
           escapeHtml(excerpt(desc, 140)) +
           '</span>' +
+          '<span class="mod-card-downloads">' +
+          downloadIcon() +
+          '<span class="dl-count">' +
+          formatCount(getDownloadCount(mod)) +
+          '</span>' +
+          '</span>' +
           '</span>' +
           '</button>'
         );
@@ -298,6 +330,7 @@
     var desc = getLocalizedText(mod.description);
     var author = escapeHtml(mod.author);
     var name = escapeHtml(mod.name);
+    var dlCount = getDownloadCount(mod);
     var discordHtml = '';
 
     if (mod.discord) {
@@ -321,6 +354,13 @@
       '<div class="mod-detail-meta">' +
       '<span class="mod-detail-author">' + t('author-label') + ' ' +
       author +
+      '</span>' +
+      '<span class="mod-detail-downloads">' +
+      downloadIcon() +
+      '<span class="dl-count">' +
+      formatCount(dlCount) +
+      '</span> ' +
+      (dlCount > 1 ? t('downloads-label-plural') : t('downloads-label-singular')) +
       '</span>' +
       discordHtml +
       '</div>' +
@@ -487,6 +527,44 @@
       loadError = true;
       renderList('');
     });
+
+  // ========== CHARGEMENT DU COMPTEUR DE TÉLÉCHARGEMENTS ==========
+
+  function refreshCounters() {
+    if (mods.length === 0) return;
+    renderList(searchInput.value);
+    var hash = window.location.hash || '';
+    if (hash.indexOf('#/mod/') === 0) {
+      var match = hash.match(/^#\/mod\/(.+)$/);
+      if (match) renderDetail(decodeURIComponent(match[1]));
+    }
+  }
+
+  function loadDownloadCounts() {
+    fetch('https://multidb-download-counter.creatif-france.workers.dev/stats/hits')
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (stats) {
+        if (!Array.isArray(stats)) return;
+        stats.forEach(function (entry) {
+          if (!entry || typeof entry.name !== 'string' || typeof entry.count !== 'number') return;
+          var clean = entry.name;
+          if (clean.indexOf('Téléchargement: ') === 0) {
+            clean = clean.slice('Téléchargement: '.length);
+          }
+          if (!clean) return;
+          downloadCounts[clean] = entry.count;
+        });
+        refreshCounters();
+      })
+      .catch(function () {
+        // En cas d'échec, chaque élément reste affiché à 0 téléchargement.
+      });
+  }
+
+  loadDownloadCounts();
 
   // ========== INITIALISATION ==========
 
