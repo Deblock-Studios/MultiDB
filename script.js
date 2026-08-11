@@ -16,6 +16,11 @@
       'filter-mods': 'Mods',
       'filter-textures': 'Packs de textures',
       'filter-games': 'Jeux',
+      'sort-label': 'Trier :',
+      'sort-downloads-desc': 'Du plus téléchargé au moins téléchargé',
+      'sort-downloads-asc': 'Du moins téléchargé au plus téléchargé',
+      'sort-name-asc': 'Ordre alphabétique',
+      'sort-name-desc': 'Ordre alphabétique inversé',
       'loading-label': 'Chargement…',
       'loading-mods': 'Chargement des mods…',
       'error-load': 'Impossible de charger la liste des mods. Réessaie plus tard.',
@@ -53,6 +58,11 @@
       'filter-mods': 'Mods',
       'filter-textures': 'Texture Packs',
       'filter-games': 'Games',
+      'sort-label': 'Sort:',
+      'sort-downloads-desc': 'Most downloaded',
+      'sort-downloads-asc': 'Least downloaded',
+      'sort-name-asc': 'Alphabetical (A to Z)',
+      'sort-name-desc': 'Alphabetical (Z to A)',
       'loading-label': 'Loading…',
       'loading-mods': 'Loading mods…',
       'error-load': 'Failed to load the mod list. Try again later.',
@@ -87,6 +97,7 @@
   var mods = [];
   var loadError = false;
   var currentFilter = 'all';
+  var currentSort = 'downloads-desc';
   var downloadCounts = {};
 
   var modsListEl = document.getElementById('mods-list');
@@ -139,6 +150,16 @@
       else if (category === 'texture') btn.textContent = t('filter-textures');
       else if (category === 'game') btn.textContent = t('filter-games');
     });
+    var sortLabelEl = document.getElementById('sort-label');
+    if (sortLabelEl) sortLabelEl.textContent = t('sort-label');
+    var sortSelect = document.getElementById('sort-select');
+    if (sortSelect) {
+      sortSelect.setAttribute('aria-label', t('sort-label'));
+      document.querySelectorAll('#sort-select option').forEach(function (opt) {
+        var sortValue = opt.getAttribute('data-value');
+        if (sortValue) opt.textContent = t('sort-' + sortValue);
+      });
+    }
     document.getElementById('back-btn').textContent = t('back-button');
     document.getElementById('footer-text').textContent = t('footer-text');
     document.getElementById('post-mod-btn').textContent = t('post-mod-button');
@@ -205,6 +226,23 @@
   function formatCount(count) {
     var locale = currentLang === 'fr' ? 'fr-FR' : 'en-US';
     return count.toLocaleString(locale);
+  }
+
+  function sortMods(arr) {
+    return arr.slice().sort(function (a, b) {
+      var diff;
+      if (currentSort === 'downloads-asc') {
+        diff = getDownloadCount(a) - getDownloadCount(b);
+      } else if (currentSort === 'name-asc') {
+        diff = a.name.localeCompare(b.name, currentLang);
+      } else if (currentSort === 'name-desc') {
+        diff = b.name.localeCompare(a.name, currentLang);
+      } else {
+        diff = getDownloadCount(b) - getDownloadCount(a);
+      }
+      if (diff !== 0) return diff;
+      return a.name.localeCompare(b.name, currentLang);
+    });
   }
 
   function downloadIcon() {
@@ -279,7 +317,7 @@
       return;
     }
 
-    var html = filtered
+    var html = sortMods(filtered)
       .map(function (mod, index) {
         var desc = getLocalizedText(mod.description);
         return (
@@ -360,7 +398,7 @@
       '<span class="dl-count">' +
       formatCount(dlCount) +
       '</span> ' +
-      (dlCount > 1 ? t('downloads-label-plural') : t('downloads-label-singular')) +
+      (dlCount === 1 ? t('downloads-label-singular') : t('downloads-label-plural')) +
       '</span>' +
       discordHtml +
       '</div>' +
@@ -487,6 +525,14 @@
       renderList(searchInput.value);
     });
   });
+
+  var sortSelectEl = document.getElementById('sort-select');
+  if (sortSelectEl) {
+    sortSelectEl.addEventListener('change', function () {
+      currentSort = sortSelectEl.value;
+      renderList(searchInput.value);
+    });
+  }
 
   // ========== MODALE "POSTER UN MOD" ==========
 

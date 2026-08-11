@@ -45,6 +45,15 @@
       <button type="button" class="filter-btn" data-category="mod">Mods</button>
       <button type="button" class="filter-btn" data-category="texture">Packs de textures</button>
       <button type="button" class="filter-btn" data-category="game">Jeux</button>
+      <div class="sort-control">
+        <label for="sort-select" class="sort-label" id="sort-label">Trier :</label>
+        <select id="sort-select" class="sort-select">
+          <option value="downloads-desc" data-value="downloads-desc">Du plus téléchargé au moins téléchargé</option>
+          <option value="downloads-asc" data-value="downloads-asc">Du moins téléchargé au plus téléchargé</option>
+          <option value="name-asc" data-value="name-asc">Ordre alphabétique</option>
+          <option value="name-desc" data-value="name-desc">Ordre alphabétique inversé</option>
+        </select>
+      </div>
       <button type="button" class="btn-post-mod" id="post-mod-btn">Poster un mod</button>
       <a href="tuto.html" class="btn-tuto" id="tuto-btn">📖 Tutoriel</a>
     </div>
