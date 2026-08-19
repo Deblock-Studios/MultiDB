@@ -587,7 +587,7 @@
   }
 
   function loadDownloadCounts() {
-    fetch('https://multidb-download-counter.creatif-france.workers.dev/stats/hits?from=2026-07-01')
+    fetch('https://multidb-download-counter.creatif-france.workers.dev/stats/hits?start=2026-07-01')
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);
         return res.json();
