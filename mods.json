@@ -114,5 +114,18 @@
       "fr": "Ce mod ajoute le minerai de Lapis a votre jeu",
       "en": "This mod adds the Lapis ore to your game"
     }
+    },
+      {
+    "id": "revamped_draconis",
+    "category": "texture",
+    "name": "Revamped Draconis",
+    "author": "Pro13",
+    "discord": "pro13.yt",
+    "image": "https://multidb.vercel.app/images/revamped_draconis.png",
+    "download": "https://files.catbox.moe/1jc4ue.zip",
+    "description": {
+      "fr": "Redesign complet des items du mod Draconis",
+      "en": "Complete redesign of Draconis mod items"
     }
+      }
   ]
