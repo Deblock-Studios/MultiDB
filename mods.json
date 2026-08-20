@@ -6,7 +6,7 @@
     "author": "Rangee",
     "discord": "rangee.alt",
     "image": "https://multidb.vercel.app/images/revamped.png",
-    "download": "https://files.catbox.moe/0dosc9.zip",
+    "download": "https://multidb-cdn.vercel.app/ReVamped.zip",
     "description": {
       "fr": "Un texture pack pour le verre",
       "en": "A texture pack for glass"
@@ -32,7 +32,7 @@
     "author": "Dulen",
     "discord": "dulen1",
     "image": "https://multidb.vercel.app/images/checkered_titles.png",
-    "download": "https://files.catbox.moe/5q662a.zip",
+    "download": "https://multidb-cdn.vercel.app/checkered_tiles.zip",
     "description": {
       "fr": "Un texture pack qui ajoute de nouvelles textures pour les blocs de brique",
       "en": "A texture pack that add new textures for bricks blocks"
@@ -45,7 +45,7 @@
     "author": "Aurelmattnath",
     "discord": "thefiremulti",
     "image": "https://multidb.vercel.app/images/minecraft.png",
-    "download": "https://files.catbox.moe/6nhhf3.zip",
+    "download": "https://multidb-cdn.vercel.app/minecraft.zip",
     "description": {
       "fr": "Un texture pack qui reprend les textures de Minecraft",
       "en": "A texture pack that add Minecraft's textures."
@@ -58,7 +58,7 @@
     "author": "Raphaventure",
     "discord": "raphaventure",
     "image": "https://multidb.vercel.app/images/sapphire.png",
-    "download": "https://files.catbox.moe/wevodb.zip",
+    "download": "https://multidb-cdn.vercel.app/sapphire.zip",
     "description": {
       "fr": "Un mod qui ajoute des outils, minerais et blocs de sapphire.",
       "en": "A mod that add tools, ores and blocks of sapphire."
@@ -71,7 +71,7 @@
     "author": "Raphaventure",
     "discord": "raphaventure",
     "image": "https://multidb.vercel.app/images/quartz_age.png",
-    "download": "https://files.catbox.moe/9d7wey.zip",
+    "download": "https://multidb-cdn.vercel.app/quartz_age.zip",
     "description": {
       "fr": "Ce mod ajoute des outils et armures en quartz dans votre monde.",
       "en": "This Quartz Mod adds quartz tools and armors into your MultiCraft world."
@@ -84,7 +84,7 @@
     "author": "Raphaventure",
     "discord": "raphaventure",
     "image": "https://multidb.vercel.app/images/bonusbox.png",
-    "download": "https://files.catbox.moe/ltndkv.zip",
+    "download": "https://multidb-cdn.vercel.app/bonusbox.zip",
     "description": {
       "fr": "Ce mod ajoute un coffre bonus à votre monde.",
       "en": "This mod add a bonus chest to your world"
@@ -96,7 +96,7 @@
     "name": "MultiCraft Game Legacy",
     "author": "Catman2608 (GitHub)",
     "image": "https://github.com/Catman2608/Multicraft_game_legacy/blob/master/screenshot.png?raw=true",
-    "download": "https://files.catbox.moe/yh5dw4.zip",
+    "download": "https://multidb-cdn.vercel.app/mtc_game.zip",
     "description": {
       "fr": "L'ancien MultiCraft Game pour Luanti.",
       "en": "The old MultiCraft Game for Luanti."
@@ -109,7 +109,7 @@
     "author": "Pro13",
     "discord": "pro13.yt",
     "image": "https://multidb.vercel.app/images/lapis.png",
-    "download": "https://files.catbox.moe/eimhts.zip",
+    "download": "https://multidb-cdn.vercel.app/lapis.zip",
     "description": {
       "fr": "Ce mod ajoute le minerai de Lapis a votre jeu",
       "en": "This mod adds the Lapis ore to your game"
@@ -122,7 +122,7 @@
     "author": "Pro13",
     "discord": "pro13.yt",
     "image": "https://multidb.vercel.app/images/revamped_draconis.jpg",
-    "download": "https://files.catbox.moe/1jc4ue.zip",
+    "download": "https://multidb-cdn.vercel.app/revamped_draconis.zip",
     "description": {
       "fr": "Redesign complet des items du mod Draconis",
       "en": "Complete redesign of Draconis mod items"
