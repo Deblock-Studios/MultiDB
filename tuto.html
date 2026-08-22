@@ -277,7 +277,7 @@
 
     <div class="tuto-hero">
       <h1 id="tuto-title"><span class="gradient-text">Tutoriel</span></h1>
-      <p id="tuto-subtitle">Installe facilement des mods et des packs de textures sur MultiCraft.</p>
+      <p id="tuto-subtitle">Installe facilement des mods, des packs de textures et des jeux sur MultiCraft.</p>
     </div>
 
     <!-- Breadcrumb -->
@@ -293,7 +293,7 @@
     <div class="tuto-step active" id="step-1">
       <div class="tuto-question">
         <h2 id="q1-title">Que veux-tu installer ?</h2>
-        <p id="q1-sub">Choisis entre un mod ou un pack de textures.</p>
+        <p id="q1-sub">Choisis entre un mod, un pack de textures ou un jeu.</p>
       </div>
       <div class="tuto-choices">
         <button type="button" class="tuto-choice-btn" data-type="mod">
@@ -305,6 +305,11 @@
           <span class="icon">🎨</span>
           <span id="choice-texture">Texture pack</span>
           <span class="sub" id="choice-texture-sub">Change l'apparence du jeu</span>
+        </button>
+        <button type="button" class="tuto-choice-btn" data-type="game">
+          <span class="icon">🎮</span>
+          <span id="choice-game">Jeu</span>
+          <span class="sub" id="choice-game-sub">Joue à un autre jeu</span>
         </button>
       </div>
     </div>
@@ -352,18 +357,20 @@
   var translations = {
     fr: {
       'page-title': 'Tutoriel — MultiDB',
-      'page-desc': 'Tutoriel interactif pour installer des mods et textures sur MultiCraft.',
+      'page-desc': 'Tutoriel interactif pour installer des mods, textures et jeux sur MultiCraft.',
       'tuto-title': 'Tutoriel',
-      'tuto-subtitle': 'Installe facilement des mods et des packs de textures sur MultiCraft.',
+      'tuto-subtitle': 'Installe facilement des mods, des packs de textures et des jeux sur MultiCraft.',
       'bc-type': 'Type',
       'bc-os': 'OS',
       'bc-result': 'Résultat',
       'q1-title': 'Que veux-tu installer ?',
-      'q1-sub': 'Choisis entre un mod ou un pack de textures.',
+      'q1-sub': 'Choisis entre un mod, un pack de textures ou un jeu.',
       'choice-mod': 'Mod',
       'choice-mod-sub': 'Ajoute des fonctionnalités',
       'choice-texture': 'Texture pack',
       'choice-texture-sub': "Change l'apparence du jeu",
+      'choice-game': 'Jeu',
+      'choice-game-sub': 'Joue à un autre jeu',
       'q2-title': "Quel est ton système d'exploitation ?",
       'q2-sub': 'Sélectionne la plateforme sur laquelle tu joues.',
       'os-help': 'iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android',
@@ -384,14 +391,14 @@
       'mod-android-step2': "Ouvre MT Manager. Sur la partie gauche de l'application, ouvre le dossier Downloads et cherche le dossier du mod.",
       'mod-android-step3': "Sur la partie droite de l'application, ouvre le dossier Android, puis data, puis com.multicraft.game, puis files, puis mods.",
       'mod-android-step4': "Sur la partie gauche de l'application, reste appuyé sur le dossier du mod et clique sur « move -> ».",
-      'mod-android-step5': "Ouvre MultiCraft, dans le menu « Solo » clique sur « Mods gratuits ici ». Cherche le mod que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le mod !",
+      'mod-android-step5': "Va dans le dossier du monde dans lequel tu veux installer le mod (dossier worlds), ouvre le fichier world.mt et ajoute la ligne « load_mod_<nom du dossier du mod> = mods/<nom du dossier du mod> ». Tu peux ensuite jouer avec le mod !",
 
       // Mod - iOS/macOS
       'mod-ios-title': '🧩 Installer un mod sur iOS / macOS',
       'mod-ios-disclaimer': "Aucun membre de notre équipe n'est sur iOS / macOS donc nous ne savons pas si ce tutoriel est précis. Désolés :(",
       'mod-ios-step1': "Télécharge le mod de ton choix et extrais le zip. Ensuite copie le dossier.",
       'mod-ios-step2': 'Dans « Mon iPhone » ou « Mon iPad », trouve le dossier MultiCraft. Ouvre-le et ouvre le dossier mods. Ensuite colle le dossier du mod.',
-      'mod-ios-step3': "Ouvre MultiCraft, dans le menu « Solo » clique sur « Mods gratuits ici ». Cherche le mod que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le mod !",
+      'mod-ios-step3': "Va dans le dossier du monde dans lequel tu veux installer le mod (dossier worlds), ouvre le fichier world.mt et ajoute la ligne « load_mod_<nom du dossier du mod> = mods/<nom du dossier du mod> ». Tu peux ensuite jouer avec le mod !",
 
       // Mod - Windows/Linux
       'mod-windows-title': '🧩 Installer un mod sur Windows',
@@ -431,6 +438,38 @@
       'texture-ios-step2': "Dans « Mon iPhone » ou « Mon iPad », trouve le dossier MultiCraft. Ouvre-le et ouvre le dossier textures. Ensuite colle le dossier du pack.",
       'texture-ios-step3': "Ouvre MultiCraft, dans les paramètres clique sur « Packs de textures ». Cherche le pack de texture que tu as installé et clique sur la coche verte. Tu peux ensuite jouer avec le pack de texture en solo et en multijoueur !",
 
+      // Jeux - Windows
+      'game-windows-title': '🎮 Installer un jeu sur Windows',
+      'game-windows-step1': "Télécharge le jeu de ton choix et extrais le zip. Ensuite copie le dossier.",
+      'game-windows-step2': "Dans le dossier Windows (C:), clique sur Users, puis sur ton nom, puis sur AppData, puis sur Roaming, après clique sur MultiCraft et enfin sur games. Colle le dossier du jeu.",
+      'game-windows-step3': "Ouvre MultiCraft, clique sur « Créer un monde » et sélectionne le jeu que tu as installé. Tu peux ensuite jouer !",
+
+      // Jeux - Linux
+      'game-linux-title': '🎮 Installer un jeu sur Linux',
+      'game-linux-note': 'Les instructions pour Linux sont basées sur l\'utilisation de Wine, car MultiCraft ne propose pas de version Linux.',
+      'game-linux-step1': "Télécharge le jeu de ton choix et extrais le zip. Ensuite copie le dossier.",
+      'game-linux-step2': "Rends-toi sur ton dossier principal (/home/tonnom). Ensuite, clique sur « Affichage » en haut puis sur « Afficher les fichiers cachés ». Tu verras ensuite le dossier « .wine ». Ouvre-le, puis clique sur drive_c puis Program Files puis MultiCraft et enfin sur games. Colle le dossier du jeu.",
+      'game-linux-step3': "Ouvre MultiCraft, clique sur « Créer un monde » et sélectionne le jeu que tu as installé. Tu peux ensuite jouer !",
+
+      // Jeux - Android
+      'game-android-title': '🎮 Installer un jeu sur Android',
+      'game-android-req-title': "Tu auras besoin :",
+      'game-android-req-1': "Soit d'un gestionnaire de fichiers supportant l'accès aux fichiers d'applications comme MT Manager",
+      'game-android-req-2': "Soit d'un ordinateur et d'un câble",
+      'game-android-note': 'Ici nous avons détaillé les étapes pour MT Manager.',
+      'game-android-step1': "Télécharge le jeu de ton choix et extrais le ZIP.",
+      'game-android-step2': "Ouvre MT Manager. Sur la partie gauche de l'application, ouvre le dossier Downloads et cherche le dossier du jeu.",
+      'game-android-step3': "Sur la partie droite de l'application, ouvre le dossier Android, puis data, puis com.multicraft.game, puis files, puis games.",
+      'game-android-step4': "Sur la partie gauche de l'application, reste appuyé sur le dossier du jeu et clique sur « move -> ».",
+      'game-android-step5': "Ouvre MultiCraft, clique sur « Créer un monde » et sélectionne le jeu que tu as installé. Tu peux ensuite jouer !",
+
+      // Jeux - iOS/macOS
+      'game-ios-title': '🎮 Installer un jeu sur iOS / macOS',
+      'game-ios-disclaimer': "Aucun membre de notre équipe n'est sur iOS / macOS donc nous ne savons pas si ce tutoriel est précis. Désolés :(",
+      'game-ios-step1': "Télécharge le jeu de ton choix et extrais le zip. Ensuite copie le dossier.",
+      'game-ios-step2': "Dans « Mon iPhone » ou « Mon iPad », trouve le dossier MultiCraft. Ouvre-le et ouvre le dossier games. Ensuite colle le dossier du jeu.",
+      'game-ios-step3': "Ouvre MultiCraft, clique sur « Créer un monde » et sélectionne le jeu que tu as installé. Tu peux ensuite jouer !",
+
       'survey-text': "Hey ! L'équipe de MultiDB aimerais connaitre votre avis sur le site. Si vous le souhaitez, un sondage qui ne prend pas plus d'une minute a été créé. Un grand merci à vous",
       'survey-btn': '🤝 Donner mon avis',
       'survey-skip': 'Plus tard'
@@ -438,18 +477,20 @@
 
     en: {
       'page-title': 'Tutorial — MultiDB',
-      'page-desc': 'Interactive tutorial to install mods and textures on MultiCraft.',
+      'page-desc': 'Interactive tutorial to install mods, textures and games on MultiCraft.',
       'tuto-title': 'Tutorial',
-      'tuto-subtitle': 'Easily install mods and texture packs on MultiCraft.',
+      'tuto-subtitle': 'Easily install mods, texture packs and games on MultiCraft.',
       'bc-type': 'Type',
       'bc-os': 'OS',
       'bc-result': 'Result',
       'q1-title': 'What do you want to install?',
-      'q1-sub': 'Choose between a mod or a texture pack.',
+      'q1-sub': 'Choose between a mod, a texture pack or a game.',
       'choice-mod': 'Mod',
       'choice-mod-sub': 'Adds features',
       'choice-texture': 'Texture pack',
       'choice-texture-sub': "Changes the game's look",
+      'choice-game': 'Game',
+      'choice-game-sub': 'Play another game',
       'q2-title': 'What is your operating system?',
       'q2-sub': 'Select the platform you play on.',
       'os-help': 'iPhone/iPad/Mac = iOS/macOS · Samsung/Xiaomi/Oppo etc. = Android',
@@ -470,14 +511,14 @@
       'mod-android-step2': 'Open MT Manager. On the left side, open the Downloads folder and find the mod folder.',
       'mod-android-step3': 'On the right side, open Android > data > com.multicraft.game > files > mods.',
       'mod-android-step4': 'On the left side, long-press the mod folder and tap "move ->".',
-      'mod-android-step5': 'Open MultiCraft. In the "Singleplayer" menu, tap "Free mods here". Find the mod and tap the green checkmark. You can now play with the mod!',
+      'mod-android-step5': 'Go to the folder of the world where you want to install the mod (the worlds folder), open the world.mt file and add the line "load_mod_<mod folder name> = mods/<mod folder name>". You can now play with the mod!',
 
       // Mod - iOS/macOS
       'mod-ios-title': '🧩 Install a mod on iOS / macOS',
       'mod-ios-disclaimer': 'No one on our team uses iOS or macOS, so we are not sure if this tutorial is accurate. Sorry :(',
       'mod-ios-step1': 'Download the mod of your choice and extract the zip. Then copy the folder.',
       'mod-ios-step2': 'In "On My iPhone" or "On My iPad", locate the MultiCraft folder. Open it, then open the mods folder. Paste the mod folder.',
-      'mod-ios-step3': 'Open MultiCraft. In the "Singleplayer" menu, click "Free mods here". Find the mod and click the green checkmark. You can now play with the mod!',
+      'mod-ios-step3': 'Go to the folder of the world where you want to install the mod (the worlds folder), open the world.mt file and add the line "load_mod_<mod folder name> = mods/<mod folder name>". You can now play with the mod!',
 
       // Mod - Windows/Linux
       'mod-windows-title': '🧩 Install a mod on Windows',
@@ -516,6 +557,38 @@
       'texture-ios-step1': 'Download the pack of your choice and extract the zip. Then copy the folder.',
       'texture-ios-step2': 'In "On My iPhone" or "On My iPad", locate the MultiCraft folder. Open it, then open the textures folder. Paste the pack folder.',
       'texture-ios-step3': 'Open MultiCraft, go to Settings > "Texture packs". Find the pack and click the green checkmark. Play in singleplayer and multiplayer!',
+
+      // Games - Windows
+      'game-windows-title': '🎮 Install a game on Windows',
+      'game-windows-step1': 'Download the game of your choice and extract the zip. Then copy the folder.',
+      'game-windows-step2': 'In the Windows (C:) drive, click Users > your username > AppData > Roaming > MultiCraft > games. Paste the game folder.',
+      'game-windows-step3': 'Open MultiCraft, click "Create a world" and select the game you installed. You can now play!',
+
+      // Games - Linux
+      'game-linux-title': '🎮 Install a game on Linux',
+      'game-linux-note': 'These instructions are based on using Wine, as MultiCraft does not offer a native Linux version.',
+      'game-linux-step1': 'Download the game of your choice and extract the zip. Then copy the folder.',
+      'game-linux-step2': 'Go to your home folder (/home/yourname). Click "View" > "Show hidden files". Find the ".wine" folder. Open it, then drive_c > Program Files > MultiCraft > games. Paste the game folder.',
+      'game-linux-step3': 'Open MultiCraft, click "Create a world" and select the game you installed. You can now play!',
+
+      // Games - Android
+      'game-android-title': '🎮 Install a game on Android',
+      'game-android-req-title': 'You will need:',
+      'game-android-req-1': 'Either a file manager that supports app data access, like MT Manager',
+      'game-android-req-2': 'Or a computer and a cable',
+      'game-android-note': 'Here are the detailed steps for MT Manager.',
+      'game-android-step1': 'Download the game of your choice and extract the ZIP.',
+      'game-android-step2': 'Open MT Manager. On the left side, open the Downloads folder and find the game folder.',
+      'game-android-step3': 'On the right side, open Android > data > com.multicraft.game > files > games.',
+      'game-android-step4': 'On the left side, long-press the game folder and tap "move ->".',
+      'game-android-step5': 'Open MultiCraft, tap "Create a world" and select the game you installed. You can now play!',
+
+      // Games - iOS/macOS
+      'game-ios-title': '🎮 Install a game on iOS / macOS',
+      'game-ios-disclaimer': 'No one on our team uses iOS or macOS, so we are not sure if this tutorial is accurate. Sorry :(',
+      'game-ios-step1': 'Download the game of your choice and extract the zip. Then copy the folder.',
+      'game-ios-step2': 'In "On My iPhone" or "On My iPad", locate the MultiCraft folder. Open it, then open the games folder. Paste the game folder.',
+      'game-ios-step3': 'Open MultiCraft, click "Create a world" and select the game you installed. You can now play!',
 
       'survey-text': "Hey! The MultiDB team would like to know your opinion about the site. If you wish, a survey that takes no more than a minute has been created. Many thanks to you",
       'survey-btn': '🤝 Give my opinion',
@@ -565,6 +638,8 @@
     document.getElementById('choice-mod-sub').textContent = t('choice-mod-sub');
     document.getElementById('choice-texture').textContent = t('choice-texture');
     document.getElementById('choice-texture-sub').textContent = t('choice-texture-sub');
+    document.getElementById('choice-game').textContent = t('choice-game');
+    document.getElementById('choice-game-sub').textContent = t('choice-game-sub');
     document.getElementById('q2-title').textContent = t('q2-title');
     document.getElementById('q2-sub').textContent = t('q2-sub');
     document.getElementById('os-help').textContent = t('os-help');
@@ -660,6 +735,29 @@
         html = '<div class="tuto-result"><h3>' + t('texture-ios-title') + '</h3>'
           + '<span class="warning">' + t('texture-ios-disclaimer') + '</span>'
           + '<ol style="margin-top:1rem;padding-left:1.2rem;"><li>' + t('texture-ios-step1') + '</li><li>' + t('texture-ios-step2') + '</li><li>' + t('texture-ios-step3') + '</li></ol>'
+          + '</div>';
+      }
+    } else if (type === 'game') {
+      if (os === 'windows') {
+        html = '<div class="tuto-result"><h3>' + t('game-windows-title') + '</h3>'
+          + '<ol style="padding-left:1.2rem;"><li>' + t('game-windows-step1') + '</li><li>' + t('game-windows-step2') + '</li><li>' + t('game-windows-step3') + '</li></ol>'
+          + '</div>';
+      } else if (os === 'linux') {
+        html = '<div class="tuto-result"><h3>' + t('game-linux-title') + '</h3>'
+          + '<span class="note">' + t('game-linux-note') + '</span>'
+          + '<ol style="margin-top:1rem;padding-left:1.2rem;"><li>' + t('game-linux-step1') + '</li><li>' + t('game-linux-step2') + '</li><li>' + t('game-linux-step3') + '</li></ol>'
+          + '</div>';
+      } else if (os === 'android') {
+        html = '<div class="tuto-result"><h3>' + t('game-android-title') + '</h3>'
+          + '<p><strong>' + t('game-android-req-title') + '</strong></p>'
+          + '<ul><li>' + t('game-android-req-1') + '</li><li>' + t('game-android-req-2') + '</li></ul>'
+          + '<span class="note">' + t('game-android-note') + '</span>'
+          + '<ol style="margin-top:1rem;padding-left:1.2rem;"><li>' + t('game-android-step1') + '</li><li>' + t('game-android-step2') + '</li><li>' + t('game-android-step3') + '</li><li>' + t('game-android-step4') + '</li><li>' + t('game-android-step5') + '</li></ol>'
+          + '</div>';
+      } else if (os === 'ios') {
+        html = '<div class="tuto-result"><h3>' + t('game-ios-title') + '</h3>'
+          + '<span class="warning">' + t('game-ios-disclaimer') + '</span>'
+          + '<ol style="margin-top:1rem;padding-left:1.2rem;"><li>' + t('game-ios-step1') + '</li><li>' + t('game-ios-step2') + '</li><li>' + t('game-ios-step3') + '</li></ol>'
           + '</div>';
       }
     }
