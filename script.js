@@ -84,7 +84,7 @@
       'page-detail-title': '— MultiDB',
       'post-mod-button': 'Post a mod',
       'post-mod-title': 'Post a mod',
-      'post-mod-text': 'To post a mod, send a message on Discord to <strong>.lucas76.</strong> or an email to <a href="mailto:creatif.france@outlook.com">creatif.france@outlook.com</a>.',
+      'post-mod-text': 'To post a mod, send a message on Discord to <strong>.lucas76.</strong> or an email to <a href="mailto:deblock-studios@proton.me">deblock-studios@proton.me</a>.',
       'post-mod-close': 'Close',
       'tuto-button': '📖 Tutorial',
       'survey-text': 'We would love to know your opinion on MultiDB. We created a survey: it takes no more than a minute to fill out! Many thanks to those who will do it, you help develop MultiDB.',
