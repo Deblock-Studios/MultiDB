@@ -65,6 +65,19 @@
     }
   },
   {
+    "id": "ruby_mods",
+    "category": "mod",
+    "name": "Ruby Mods",
+    "author": "aurelmattnath",
+    "discord": "thefiremulti",
+    "image": "https://multidb.vercel.app/images/ruby_ore_images.png",
+    "download": "https://multidb-cdn.vercel.app/ruby_mods.zip",
+    "description": {
+      "fr": "Avez-vous déjà voulu avoir du minerai de rubis dans votre monde ? Eh bien, maintenant c'est possible ! (Idée et Textures de : dulen).",
+      "en": "have you ever wanted to have ruby ore in your world? well now you can! (idea and textures by: dulen)."
+    }
+  },
+  {
     "id": "quartz_age",
     "category": "mod",
     "name": "Quartz Age",

@@ -47,7 +47,9 @@
       'tuto-button': '📖 Tutoriel',
       'survey-text': "Nous aimerions connaitre votre avis sur MultiDB. Nous avons créé un sondage : il ne dure pas plus d'une minute à remplir ! Un grand merci à ceux qui le feront, vous aidez le développement de MultiDB.",
       'survey-btn': '🤝 Donner mon avis',
-      'survey-skip': 'Plus tard'
+      'survey-skip': 'Plus tard',
+      'announcement-text': '+5000 serveurs répertoriés sur notre autre site, <strong>MultiCraft Info</strong> !',
+      'announcement-btn': 'Accéder →'
     },
     en: {
       'hero-title-start': 'Mods',
@@ -84,12 +86,14 @@
       'page-detail-title': '— MultiDB',
       'post-mod-button': 'Post a mod',
       'post-mod-title': 'Post a mod',
-      'post-mod-text': 'To post a mod, send a message on Discord to <strong>.lucas76.</strong> or an email to <a href="mailto:creatif.france@outlook.com">creatif.france@outlook.com</a>.',
+      'post-mod-text': 'To post a mod, send a message on Discord to <strong>.lucas76.</strong> or an email to <a href="mailto:deblock-studios@proton.me">deblock-studios@proton.me</a>.',
       'post-mod-close': 'Close',
       'tuto-button': '📖 Tutorial',
       'survey-text': 'We would love to know your opinion on MultiDB. We created a survey: it takes no more than a minute to fill out! Many thanks to those who will do it, you help develop MultiDB.',
       'survey-btn': '🤝 Give my opinion',
-      'survey-skip': 'Later'
+      'survey-skip': 'Later',
+      'announcement-text': '+5000 servers listed on our other site, <strong>MultiCraft Info</strong>!',
+      'announcement-btn': 'Visit →'
     }
   };
 
@@ -174,6 +178,10 @@
     if (surveyLinkEl) surveyLinkEl.textContent = t('survey-btn');
     var surveySkipEl = document.getElementById('survey-skip');
     if (surveySkipEl) surveySkipEl.textContent = t('survey-skip');
+    var announcementTextEl = document.getElementById('announcement-text');
+    if (announcementTextEl) announcementTextEl.innerHTML = t('announcement-text');
+    var announcementBtnEl = document.getElementById('announcement-btn');
+    if (announcementBtnEl) announcementBtnEl.textContent = t('announcement-btn');
     var surveyCloseEl = document.getElementById('survey-close');
     if (surveyCloseEl) surveyCloseEl.setAttribute('aria-label', t('post-mod-close'));
   }
