@@ -807,12 +807,13 @@
         userInfo.style.display = 'flex';
       }
       if (avatarEl) {
-        avatarEl.src = Deblock.getAvatarUrl();
+        setImageSrcSafely(avatarEl, Deblock.getAvatarUrl());
         avatarEl.alt = Deblock.getDisplayName();
       }
       if (usernameEl) usernameEl.textContent = Deblock.getDisplayName();
     } else {
       if (loginBtn) loginBtn.style.display = '';
+      if (avatarEl) setImageSrcSafely(avatarEl, '');
       if (userInfo) {
         userInfo.setAttribute('hidden', '');
         userInfo.style.display = 'none';
@@ -983,6 +984,29 @@
 
   var profilePageInitialized = false;
 
+  /* Affecte l'URL d'une <img> sans déclencher de boucle de chargement.
+     Réaffecter `src` relance TOUJOURS le chargement, même avec la même valeur ;
+     et une valeur vide se résout vers l'URL de la page (document HTML), donc le
+     navigateur émet « error » à chaque fois. Si le gestionnaire d'erreur
+     réaffecte `src`, on entre dans une boucle infinie à ~10 000 itérations par
+     seconde (CPU à 100 %, RAM qui explose, page qui ne finit jamais de charger).
+     Ici : on détache le gestionnaire avant toute affectation, on n'écrit jamais
+     une valeur vide et on ne réaffecte pas une URL déjà en place. */
+  function setImageSrcSafely(img, url) {
+    if (!img) return;
+    img.onerror = null;
+    if (url) {
+      img.onerror = function () {
+        // Image cassée : on retire la source, sans relancer de chargement.
+        img.onerror = null;
+        img.removeAttribute('src');
+      };
+      if (img.getAttribute('src') !== url) img.src = url;
+    } else if (img.hasAttribute('src')) {
+      img.removeAttribute('src');
+    }
+  }
+
   function refreshProfileData() {
     if (!window.Deblock) return;
     var user = Deblock.getUser();
@@ -991,8 +1015,7 @@
     var emailInput = document.getElementById('profile-email');
     if (pseudoInput) pseudoInput.value = Deblock.getDisplayName() || '';
     if (emailInput) emailInput.value = user.email || '';
-    var avatarPreviewEl = document.getElementById('profile-avatar-preview');
-    if (avatarPreviewEl) avatarPreviewEl.src = Deblock.getAvatarUrl() || '';
+    setImageSrcSafely(document.getElementById('profile-avatar-preview'), Deblock.getAvatarUrl());
     var newPwdInput = document.getElementById('profile-new-password');
     var confirmPwdInput = document.getElementById('profile-confirm-password');
     if (newPwdInput) newPwdInput.value = '';
@@ -1044,8 +1067,7 @@
 
       function loadCurrentAvatar() {
         if (!previewEl) return;
-        previewEl.src = Deblock.getAvatarUrl() || '';
-        previewEl.onerror = function () { previewEl.src = ''; };
+        setImageSrcSafely(previewEl, Deblock.getAvatarUrl());
       }
       loadCurrentAvatar();
 
@@ -1061,7 +1083,7 @@
           pendingFile = file;
           if (saveBtn) saveBtn.disabled = false;
           var reader = new FileReader();
-          reader.onload = function (e) { if (previewEl) previewEl.src = e.target.result; };
+          reader.onload = function (e) { setImageSrcSafely(previewEl, e.target.result); };
           reader.readAsDataURL(file);
         });
       }
@@ -1093,7 +1115,7 @@
         removeBtn.addEventListener('click', async function () {
           try {
             await Deblock.updateProfile({ avatar_url: '' });
-            if (previewEl) previewEl.src = '';
+            setImageSrcSafely(previewEl, '');
             pendingFile = null;
             if (inputEl) inputEl.value = '';
             if (saveBtn) saveBtn.disabled = true;
