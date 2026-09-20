@@ -25,9 +25,21 @@
       <span class="search-icon">🔍</span>
       <input type="text" id="search-input" placeholder="Rechercher un mod, un auteur…" autocomplete="off">
     </div>
-    <div class="lang-switch" id="lang-switch" role="group" aria-label="Choix de la langue">
-      <button type="button" class="lang-btn active" data-lang="fr">🇫🇷</button>
-      <button type="button" class="lang-btn" data-lang="en">🇬🇧</button>
+    <div class="lang-switcher" id="lang-switcher" aria-label="Language / Langue"></div>
+    <div id="deblock-auth-widget" class="deblock-auth-widget">
+      <button id="deblock-login-btn" class="btn btn-deblock-auth" aria-label="Se connecter avec Deblock">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+        </svg>
+        <span id="deblock-btn-label">Connexion</span>
+      </button>
+      <div id="deblock-user-info" class="deblock-user-info" hidden>
+        <img id="deblock-avatar" class="deblock-avatar" src="" alt="" width="28" height="28">
+        <span id="deblock-username" class="deblock-username"></span>
+        <a href="#/profil" class="deblock-profile-link" aria-label="Profil">
+          <svg width="20" height="20" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" aria-hidden="true"><path d="M9.6,3.32a3.86,3.86,0,1,0,3.86,3.85A3.85,3.85,0,0,0,9.6,3.32M16.35,11a.26.26,0,0,0-.25.21l-.18,1.27a4.63,4.63,0,0,0-.82.45l-1.2-.48a.3.3,0,0,0-.3.13l-1,1.66a.24.24,0,0,0,.06.31l1,.79a3.94,3.94,0,0,0,0,1l-1,.79a.23.23,0,0,0-.06.3l1,1.67c.06.13.19.13.3.13l1.2-.49a3.85,3.85,0,0,0,.82.46l.18,1.27a.24.24,0,0,0,.25.2h1.93a.24.24,0,0,0,.23-.2l.18-1.27a5,5,0,0,0,.81-.46l1.19.49c.12,0,.25,0,.32-.13l1-1.67a.23.23,0,0,0-.06-.3l-1-.79a4,4,0,0,0,0-.49,2.67,2.67,0,0,0,0-.48l1-.79a.25.25,0,0,0,.06-.31l-1-1.66c-.06-.13-.19-.13-.31-.13L19.5,13a4.07,4.07,0,0,0-.82-.45l-.18-1.27a.23.23,0,0,0-.22-.21H16.46M9.71,13C5.45,13,2,14.7,2,16.83v1.92h9.33a6.65,6.65,0,0,1,0-5.69A13.56,13.56,0,0,0,9.71,13m7.6,1.43a1.45,1.45,0,1,1,0,2.89,1.45,1.45,0,0,1,0-2.89Z"/></svg>
+        </a>
+      </div>
     </div>
   </div>
 </header>
@@ -58,6 +70,8 @@
           <option value="downloads-asc" data-value="downloads-asc">Du moins téléchargé au plus téléchargé</option>
           <option value="name-asc" data-value="name-asc">Ordre alphabétique</option>
           <option value="name-desc" data-value="name-desc">Ordre alphabétique inversé</option>
+          <option value="rating-desc" data-value="rating-desc">Mieux notés</option>
+          <option value="rating-asc" data-value="rating-asc">Moins bien notés</option>
         </select>
       </div>
       <button type="button" class="btn-post-mod" id="post-mod-btn">Poster un mod</button>
@@ -77,6 +91,163 @@
   <section class="page" id="page-detail">
     <button class="btn btn-ghost back-btn" id="back-btn" type="button">↩ Retour à la liste</button>
     <div id="mod-detail-content"></div>
+  </section>
+
+  <!-- Page Compte Deblock / Deblock Account page -->
+  <section class="page auth-page" id="page-account">
+    <div class="auth-layout">
+      <div class="auth-hero">
+        <h1 class="auth-hero-title" id="account-hero-title">COMPTE DEBLOCK</h1>
+        <p class="auth-hero-sub" id="account-hero-sub">Un seul compte pour tout un univers</p>
+      </div>
+      <div class="auth-panel">
+        <div id="deblock-login-error" class="review-error-msg" style="margin-bottom:0.75rem;" hidden></div>
+        <!-- Login mode -->
+        <div id="deblock-login-mode">
+          <h2 class="auth-panel-title" id="account-login-title">Connexion Deblock</h2>
+          <div class="deblock-form-group">
+            <label for="deblock-email" id="account-email-label">Email</label>
+            <input type="email" id="deblock-email" class="review-input" placeholder="email@example.com" autocomplete="email">
+          </div>
+          <div class="deblock-form-group" style="margin-top:0.5rem;">
+            <label for="deblock-password" id="account-password-label">Mot de passe</label>
+            <div class="deblock-password-row">
+              <input type="password" id="deblock-password" class="review-input" placeholder="••••••••" autocomplete="current-password">
+              <button type="button" id="deblock-password-toggle" class="deblock-password-toggle" aria-label="Afficher le mot de passe">👁</button>
+            </div>
+          </div>
+          <button id="deblock-login-submit" class="btn btn-primary" style="width:100%;margin-top:0.75rem;">Se connecter</button>
+          <p class="deblock-info-note" id="account-info-note-login">Note : Ce sont les mêmes comptes que sur MultiCraft Info. Si vous avez déjà un compte là-bas, connectez-vous avec les mêmes identifiants.</p>
+          <p class="deblock-auth-switch" style="margin-top:0.75rem;font-size:0.82rem;color:var(--text-muted);text-align:center;">
+            <span id="account-no-account">Pas encore de compte ?</span>
+            <a href="#" id="deblock-show-signup" style="color:var(--green);">Créer un compte</a>
+          </p>
+          <p style="margin-top:0.4rem;font-size:0.75rem;text-align:center;">
+            <a href="#" id="deblock-show-forgot" style="color:var(--text-dim);">Mot de passe oublié ?</a>
+          </p>
+        </div>
+        <!-- Signup mode -->
+        <div id="deblock-signup-mode" hidden>
+          <h2 class="auth-panel-title" id="account-signup-title">Créer un compte</h2>
+          <div class="deblock-form-group">
+            <label for="deblock-signup-pseudo" id="account-pseudo-label">Pseudo</label>
+            <input type="text" id="deblock-signup-pseudo" class="review-input" placeholder="Votre pseudo" autocomplete="username">
+          </div>
+          <div class="deblock-form-group" style="margin-top:0.5rem;">
+            <label for="deblock-signup-email" id="account-signup-email-label">Email</label>
+            <input type="email" id="deblock-signup-email" class="review-input" placeholder="email@example.com" autocomplete="email">
+          </div>
+          <div class="deblock-form-group" style="margin-top:0.5rem;">
+            <label for="deblock-signup-password" id="account-signup-password-label">Mot de passe</label>
+            <input type="password" id="deblock-signup-password" class="review-input" placeholder="•••••••• (6 caractères minimum)" autocomplete="new-password">
+          </div>
+          <div class="deblock-form-group" style="margin-top:0.5rem;">
+            <label for="deblock-signup-confirm" id="account-confirm-label">Confirmer le mot de passe</label>
+            <input type="password" id="deblock-signup-confirm" class="review-input" placeholder="••••••••" autocomplete="new-password">
+          </div>
+          <label class="deblock-consent" style="display:flex;align-items:flex-start;gap:0.5rem;margin-top:0.75rem;font-size:0.8rem;color:var(--text-muted);line-height:1.45;cursor:pointer;">
+            <input type="checkbox" id="deblock-signup-consent" style="margin-top:0.15rem;flex-shrink:0;width:1rem;height:1rem;accent-color:var(--green);">
+            <span id="account-consent">J'accepte la <a href="legal.html#privacy-title" target="_blank" rel="noopener noreferrer" style="color:var(--green);">politique de confidentialité</a> et les <a href="legal.html" target="_blank" rel="noopener noreferrer" style="color:var(--green);">conditions d'utilisation</a>.</span>
+          </label>
+          <button id="deblock-signup-submit" class="btn btn-primary" style="width:100%;margin-top:0.75rem;">Créer mon compte</button>
+          <p class="deblock-info-note" id="account-info-note-signup">Note : Ce sont les mêmes comptes que sur MultiCraft Info. Si vous avez déjà un compte là-bas, connectez-vous avec les mêmes identifiants.</p>
+          <p class="deblock-auth-switch" style="margin-top:0.75rem;font-size:0.82rem;color:var(--text-muted);text-align:center;">
+            <span id="account-has-account">Déjà un compte ?</span>
+            <a href="#" id="deblock-show-login" style="color:var(--green);">Se connecter</a>
+          </p>
+        </div>
+        <!-- Forgot password mode -->
+        <div id="deblock-forgot-mode" hidden>
+          <h2 class="auth-panel-title" id="account-forgot-title">Mot de passe oublié</h2>
+          <div class="deblock-form-group">
+            <label for="deblock-forgot-email" id="account-forgot-email-label">Email</label>
+            <input type="email" id="deblock-forgot-email" class="review-input" placeholder="email@example.com" autocomplete="email">
+          </div>
+          <button id="deblock-forgot-submit" class="btn btn-primary" style="width:100%;margin-top:0.75rem;">Envoyer le lien de réinitialisation</button>
+          <p class="deblock-auth-switch" style="margin-top:0.75rem;font-size:0.82rem;text-align:center;">
+            <a href="#" id="deblock-back-to-login" style="color:var(--green);">← Retour à la connexion</a>
+          </p>
+        </div>
+        <!-- Loading spinner for auth -->
+        <div id="deblock-auth-loading" class="deblock-auth-loading" hidden>
+          <div class="spinner"></div>
+          <p id="account-loading-text" style="margin-top:0.5rem;font-size:0.85rem;color:var(--text-muted);">Chargement…</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Page Profil / Profile page -->
+  <section class="page" id="page-profile">
+    <div class="page-header">
+      <h1 id="profile-title">Mon Profil</h1>
+      <p id="profile-subtitle">Gérez vos informations personnelles</p>
+    </div>
+    <div id="profile-status-msg" class="profile-status-msg" style="margin-bottom:1rem;" hidden></div>
+    <!-- Photo de profil -->
+    <div class="profile-section profile-avatar-section">
+      <h3 id="profile-avatar-title">Photo de profil</h3>
+      <div class="profile-avatar-wrapper">
+        <div class="profile-avatar-preview-wrap">
+          <img id="profile-avatar-preview" src="" alt="Avatar" class="profile-avatar-large">
+          <label for="profile-avatar-input" class="profile-avatar-edit-btn" title="Changer la photo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          </label>
+        </div>
+        <div class="profile-avatar-info">
+          <p class="profile-avatar-hint" id="profile-avatar-hint">JPG, PNG ou GIF · max 2 Mo</p>
+          <input type="file" id="profile-avatar-input" accept="image/jpeg,image/png,image/gif,image/webp" style="display:none;">
+          <div class="profile-avatar-actions">
+            <button id="profile-avatar-save" class="btn btn-primary" disabled>Enregistrer</button>
+            <button id="profile-avatar-remove" class="btn btn-secondary">Supprimer</button>
+          </div>
+          <div id="profile-avatar-progress" class="profile-avatar-progress" hidden>
+            <div class="profile-avatar-progress-bar"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Pseudo -->
+    <div class="profile-section">
+      <h3 id="profile-pseudo-title">Pseudo</h3>
+      <div class="profile-input-row">
+        <input type="text" id="profile-pseudo" class="review-input" placeholder="Votre pseudo" autocomplete="username" style="flex:1;">
+        <button id="profile-save-pseudo" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+    <!-- Email -->
+    <div class="profile-section">
+      <h3 id="profile-email-title">Email</h3>
+      <div class="profile-input-row">
+        <input type="email" id="profile-email" class="review-input" placeholder="email@example.com" autocomplete="email" style="flex:1;">
+        <button id="profile-save-email" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+    <!-- Password -->
+    <div class="profile-section">
+      <h3 id="profile-password-title">Mot de passe</h3>
+      <div class="profile-input-row" style="flex-direction:column;gap:0.5rem;">
+        <input type="password" id="profile-new-password" class="review-input" placeholder="Nouveau mot de passe (6 caractères minimum)" autocomplete="new-password" style="width:100%;">
+        <input type="password" id="profile-confirm-password" class="review-input" placeholder="Confirmer le mot de passe" autocomplete="new-password" style="width:100%;">
+        <button id="profile-save-password" class="btn btn-primary" style="align-self:flex-start;">Enregistrer</button>
+      </div>
+    </div>
+    <!-- Déconnexion -->
+    <div class="profile-section">
+      <h3 id="profile-logout-title">Déconnexion</h3>
+      <button id="deblock-logout-btn" class="btn btn-secondary">Se déconnecter</button>
+    </div>
+    <!-- Danger zone -->
+    <div class="profile-section profile-danger">
+      <h3 id="profile-delete-title">Supprimer mon compte</h3>
+      <p id="profile-delete-text" style="font-size:0.85rem;color:var(--text-muted);margin-bottom:0.75rem;">
+        Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible. </p>
+      <div class="profile-delete-actions">
+        <button id="profile-delete-btn" class="btn btn-danger">Supprimer mon compte</button>
+        <button id="profile-delete-cancel" class="btn btn-secondary" hidden>Annuler</button>
+        <button id="profile-delete-confirm" class="btn btn-danger" hidden>Oui, supprimer</button>
+      </div>
+    </div>
   </section>
 
 </main>
@@ -109,7 +280,10 @@
   </div>
 </div>
 
-<script src="script.js"></script>
+<script defer src="https://unpkg.com/@supabase/supabase-js@2"></script>
+<script defer src="i18n.js"></script>
+<script defer src="js/deblock-auth.js"></script>
+<script defer src="script.js"></script>
   <!-- 100% privacy-first analytics -->
 <script async src="https://scripts.simpleanalyticscdn.com/latest.js"></script>
 <script data-goatcounter="https://deblock-studios.goatcounter.com/count"async src="//gc.zgo.at/count.js"></script>

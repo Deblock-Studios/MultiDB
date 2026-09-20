@@ -21,6 +21,8 @@
       'sort-downloads-asc': 'Du moins téléchargé au plus téléchargé',
       'sort-name-asc': 'Ordre alphabétique',
       'sort-name-desc': 'Ordre alphabétique inversé',
+      'sort-rating-desc': 'Mieux notés',
+      'sort-rating-asc': 'Moins bien notés',
       'loading-label': 'Chargement…',
       'loading-mods': 'Chargement des mods…',
       'error-load': 'Impossible de charger la liste des mods. Réessaie plus tard.',
@@ -49,7 +51,92 @@
       'survey-btn': '🤝 Donner mon avis',
       'survey-skip': 'Plus tard',
       'announcement-text': '+5000 serveurs répertoriés sur notre autre site, <strong>MultiCraft Info</strong> !',
-      'announcement-btn': 'Accéder →'
+      'announcement-btn': 'Accéder →',
+      // Compte Deblock
+      'account-login': 'Connexion',
+      'account-hero-title': 'COMPTE DEBLOCK',
+      'account-hero-sub': 'Un seul compte pour tout un univers',
+      'account-login-title': 'Connexion Deblock',
+      'account-email': 'Email',
+      'account-password': 'Mot de passe',
+      'account-login-btn': 'Se connecter',
+      'account-no-account': 'Pas encore de compte ?',
+      'account-create': 'Créer un compte',
+      'account-forgot': 'Mot de passe oublié ?',
+      'account-signup-title': 'Créer un compte',
+      'account-pseudo': 'Pseudo',
+      'account-pseudo-placeholder': 'Votre pseudo',
+      'account-confirm-password': 'Confirmer le mot de passe',
+      'account-consent': 'J\'accepte la <a href="legal.html#privacy-title" target="_blank" rel="noopener noreferrer" style="color:var(--green);">politique de confidentialité</a> et les <a href="legal.html" target="_blank" rel="noopener noreferrer" style="color:var(--green);">conditions d\'utilisation</a>.',
+      'account-shared-note': 'Note : Ce sont les mêmes comptes que sur MultiCraft Info. Si vous avez déjà un compte là-bas, connectez-vous avec les mêmes identifiants.',
+      'account-signup-btn': 'Créer mon compte',
+      'account-has-account': 'Déjà un compte ?',
+      'account-forgot-title': 'Mot de passe oublié',
+      'account-send-reset': 'Envoyer le lien de réinitialisation',
+      'account-back-login': '← Retour à la connexion',
+      'account-loading': 'Chargement…',
+      'account-err-fill': 'Veuillez remplir tous les champs.',
+      'account-err-password-short': 'Le mot de passe doit contenir au moins 6 caractères.',
+      'account-err-password-match': 'Les mots de passe ne correspondent pas.',
+      'account-err-consent': 'Veuillez accepter la politique de confidentialité et les conditions d\'utilisation.',
+      'account-err-login': 'Erreur de connexion',
+      'account-err-signup': 'Erreur lors de l\'inscription',
+      'account-signup-success': '✅ Compte créé ! Vérifiez votre email pour confirmer votre inscription.',
+      'account-err-email': 'Veuillez entrer votre email.',
+      'account-reset-sent': '✅ Lien de réinitialisation envoyé par email',
+      'account-err-send': 'Erreur lors de l\'envoi',
+      // Profil
+      'profile-title': 'Mon Profil',
+      'profile-subtitle': 'Gérez vos informations personnelles',
+      'profile-avatar': 'Photo de profil',
+      'profile-avatar-hint': 'JPG, PNG ou GIF · max 2 Mo',
+      'profile-avatar-save': 'Enregistrer',
+      'profile-avatar-remove': 'Supprimer',
+      'profile-pseudo': 'Pseudo',
+      'profile-pseudo-placeholder': 'Votre pseudo',
+      'profile-email': 'Email',
+      'profile-password': 'Mot de passe',
+      'profile-new-password': 'Nouveau mot de passe (6 caractères minimum)',
+      'profile-confirm-password': 'Confirmer le mot de passe',
+      'profile-save': 'Enregistrer',
+      'profile-logout': 'Déconnexion',
+      'profile-logout-btn': 'Se déconnecter',
+      'profile-delete-title': 'Supprimer mon compte',
+      'profile-delete-text': 'Êtes-vous sûr de vouloir supprimer votre compte ? Cette action est irréversible.',
+      'profile-delete-btn': 'Supprimer mon compte',
+      'profile-delete-cancel': 'Annuler',
+      'profile-delete-confirm-btn': 'Oui, supprimer',
+      'profile-avatar-too-big': '❌ Image trop lourde (max 2 Mo).',
+      'profile-avatar-saved': '✓ Photo de profil mise à jour !',
+      'profile-avatar-removed': '✓ Photo supprimée.',
+      'profile-pseudo-empty': 'Le pseudo ne peut pas être vide.',
+      'profile-email-empty': 'L\'email ne peut pas être vide.',
+      'profile-pseudo-changed': '✓ Pseudo mis à jour !',
+      'profile-email-changed': '✓ Email de confirmation envoyé.',
+      'profile-password-changed': '✓ Mot de passe changé !',
+      'profile-error': 'Erreur : ',
+      'profile-deleted': '✓ Compte supprimé.',
+      'profile-login-required': 'Connectez-vous pour accéder à votre profil.',
+      // Avis
+      'reviews-title': 'Avis',
+      'reviews-no-reviews': 'Aucun avis pour le moment. Soyez le premier !',
+      'reviews-loading': 'Chargement…',
+      'reviews-sort-recent': 'Plus récents',
+      'reviews-sort-desc': 'Meilleures notes',
+      'reviews-sort-asc': 'Notes les plus basses',
+      'reviews-rating-label': 'Note :',
+      'reviews-placeholder': 'Votre avis (facultatif)',
+      'reviews-success': '✅ Merci pour votre avis !',
+      'reviews-already-done': 'Vous avez déjà laissé un avis.',
+      'reviews-already-left': 'Vous avez déjà laissé un avis pour ce mod.',
+      'reviews-error': 'Erreur : ',
+      'reviews-login-btn': 'Se connecter',
+      'reviews-form-title-pre': 'Laisser un avis en tant que ',
+      'reviews-no-badge': 'Aucun avis',
+      'reviews-count-suffix': 'avis',
+      'reviews-connect-prompt': 'Connectez-vous pour laisser un avis.',
+      'reviews-load-error': 'Impossible de charger les avis.',
+      'review-submit-btn': 'Publier'
     },
     en: {
       'hero-title-start': 'Mods',
@@ -65,6 +152,8 @@
       'sort-downloads-asc': 'Least downloaded',
       'sort-name-asc': 'Alphabetical (A to Z)',
       'sort-name-desc': 'Alphabetical (Z to A)',
+      'sort-rating-desc': 'Highest rated',
+      'sort-rating-asc': 'Lowest rated',
       'loading-label': 'Loading…',
       'loading-mods': 'Loading mods…',
       'error-load': 'Failed to load the mod list. Try again later.',
@@ -93,16 +182,123 @@
       'survey-btn': '🤝 Give my opinion',
       'survey-skip': 'Later',
       'announcement-text': '+5000 servers listed on our other site, <strong>MultiCraft Info</strong>!',
-      'announcement-btn': 'Visit →'
+      'announcement-btn': 'Visit →',
+      // Deblock account
+      'account-login': 'Log in',
+      'account-hero-title': 'DEBLOCK ACCOUNT',
+      'account-hero-sub': 'One account for a whole universe',
+      'account-login-title': 'Deblock login',
+      'account-email': 'Email',
+      'account-password': 'Password',
+      'account-login-btn': 'Log in',
+      'account-no-account': 'No account yet?',
+      'account-create': 'Create an account',
+      'account-forgot': 'Forgot your password?',
+      'account-signup-title': 'Create an account',
+      'account-pseudo': 'Username',
+      'account-pseudo-placeholder': 'Your username',
+      'account-confirm-password': 'Confirm password',
+      'account-consent': 'I accept the <a href="legal.html#privacy-title" target="_blank" rel="noopener noreferrer" style="color:var(--green);">privacy policy</a> and the <a href="legal.html" target="_blank" rel="noopener noreferrer" style="color:var(--green);">terms of use</a>.',
+      'account-shared-note': 'Note: These are the same accounts as on MultiCraft Info. If you already have an account there, log in with the same credentials.',
+      'account-signup-btn': 'Create my account',
+      'account-has-account': 'Already have an account?',
+      'account-forgot-title': 'Forgot password',
+      'account-send-reset': 'Send the reset link',
+      'account-back-login': '← Back to login',
+      'account-loading': 'Loading…',
+      'account-err-fill': 'Please fill in all fields.',
+      'account-err-password-short': 'The password must be at least 6 characters long.',
+      'account-err-password-match': 'Passwords do not match.',
+      'account-err-consent': 'Please accept the privacy policy and the terms of use.',
+      'account-err-login': 'Login error',
+      'account-err-signup': 'Signup error',
+      'account-signup-success': '✅ Account created! Check your email to confirm your registration.',
+      'account-err-email': 'Please enter your email.',
+      'account-reset-sent': '✅ Reset link sent by email',
+      'account-err-send': 'Error while sending',
+      // Profile
+      'profile-title': 'My Profile',
+      'profile-subtitle': 'Manage your personal information',
+      'profile-avatar': 'Profile picture',
+      'profile-avatar-hint': 'JPG, PNG or GIF · max 2 MB',
+      'profile-avatar-save': 'Save',
+      'profile-avatar-remove': 'Remove',
+      'profile-pseudo': 'Username',
+      'profile-pseudo-placeholder': 'Your username',
+      'profile-email': 'Email',
+      'profile-password': 'Password',
+      'profile-new-password': 'New password (at least 6 characters)',
+      'profile-confirm-password': 'Confirm password',
+      'profile-save': 'Save',
+      'profile-logout': 'Log out',
+      'profile-logout-btn': 'Log out',
+      'profile-delete-title': 'Delete my account',
+      'profile-delete-text': 'Are you sure you want to delete your account? This action is irreversible.',
+      'profile-delete-btn': 'Delete my account',
+      'profile-delete-cancel': 'Cancel',
+      'profile-delete-confirm-btn': 'Yes, delete',
+      'profile-avatar-too-big': '❌ Image too large (max 2 MB).',
+      'profile-avatar-saved': '✓ Profile picture updated!',
+      'profile-avatar-removed': '✓ Picture removed.',
+      'profile-pseudo-empty': 'The username cannot be empty.',
+      'profile-email-empty': 'The email cannot be empty.',
+      'profile-pseudo-changed': '✓ Username updated!',
+      'profile-email-changed': '✓ Confirmation email sent.',
+      'profile-password-changed': '✓ Password changed!',
+      'profile-error': 'Error: ',
+      'profile-deleted': '✓ Account deleted.',
+      'profile-login-required': 'Log in to access your profile.',
+      // Reviews
+      'reviews-title': 'Reviews',
+      'reviews-no-reviews': 'No reviews yet. Be the first!',
+      'reviews-loading': 'Loading…',
+      'reviews-sort-recent': 'Most recent',
+      'reviews-sort-desc': 'Highest rated',
+      'reviews-sort-asc': 'Lowest rated',
+      'reviews-rating-label': 'Rating:',
+      'reviews-placeholder': 'Your review (optional)',
+      'reviews-success': '✅ Thanks for your review!',
+      'reviews-already-done': 'You have already left a review.',
+      'reviews-already-left': 'You have already reviewed this mod.',
+      'reviews-error': 'Error: ',
+      'reviews-login-btn': 'Log in',
+      'reviews-form-title-pre': 'Leave a review as ',
+      'reviews-no-badge': 'No reviews',
+      'reviews-count-suffix': 'reviews',
+      'reviews-connect-prompt': 'Log in to leave a review.',
+      'reviews-load-error': 'Unable to load reviews.',
+      'review-submit-btn': 'Publish'
     }
   };
 
-  var currentLang = 'fr';
+  // Moteur de traduction : locales/<code>.json via i18n.js (une langue par fichier).
+  // Le dictionnaire `translations` ci-dessus ne sert plus que de repli si i18n.js
+  // n'a pas pu être chargé (CDN bloqué, fichier local manquant…).
+  function t(key, vars) {
+    if (window.i18n && window.i18n.t) {
+      var value = window.i18n.t(key, vars);
+      if (value !== key) return value;
+    }
+    var dict = translations[langCode()] || translations.fr || {};
+    return dict[key] || (translations.fr && translations.fr[key]) || key;
+  }
+
+  function langCode() {
+    return (window.i18n && window.i18n.lang) ? window.i18n.lang : 'fr';
+  }
+
+  // Balise de locale sûre pour Intl (formatage des nombres et des dates).
+  function localeTag() {
+    var code = langCode();
+    try { new Date().toLocaleDateString(code); return code; } catch (e) { return 'en-US'; }
+  }
+
   var mods = [];
   var loadError = false;
   var currentFilter = 'all';
   var currentSort = 'downloads-desc';
   var downloadCounts = {};
+  var modReviewStats = {};
 
   var modsListEl = document.getElementById('mods-list');
   var modsCountEl = document.getElementById('mods-count');
@@ -111,37 +307,13 @@
   var pageDetail = document.getElementById('page-detail');
   var detailContent = document.getElementById('mod-detail-content');
   var backBtn = document.getElementById('back-btn');
-  var langSwitchButtons = document.querySelectorAll('.lang-btn');
+  var pageAccount = document.getElementById('page-account');
+  var pageProfile = document.getElementById('page-profile');
   var filterButtons = document.querySelectorAll('.filter-btn');
 
-  // ========== DÉTECTION DE LA LANGUE ==========
-  function detectLanguage() {
-    var browserLang = (navigator.language || navigator.userLanguage).substring(0, 2).toLowerCase();
-    return (browserLang === 'en' || browserLang === 'fr') ? browserLang : 'fr';
-  }
-
-  function setLanguage(lang) {
-    if (lang !== 'en' && lang !== 'fr') return;
-    currentLang = lang;
-    localStorage.setItem('multidb-lang', lang);
-    updateUILanguage();
-    updateLangButtons();
-    if (mods.length > 0) {
-      renderList(searchInput.value);
-      var hash = window.location.hash;
-      if (hash.startsWith('#/mod/')) {
-        var match = hash.match(/^#\/mod\/(.+)$/);
-        if (match) renderDetail(decodeURIComponent(match[1]));
-      }
-    }
-  }
-
-  function t(key) {
-    return translations[currentLang][key] || translations.fr[key] || key;
-  }
+  // ========== MISE À JOUR DE L'INTERFACE ==========
 
   function updateUILanguage() {
-    document.documentElement.lang = currentLang;
     document.getElementById('page-title').textContent = t('page-title');
     document.getElementById('page-description').content = t('page-description');
     document.getElementById('search-input').placeholder = t('search-placeholder');
@@ -184,17 +356,9 @@
     if (announcementBtnEl) announcementBtnEl.textContent = t('announcement-btn');
     var surveyCloseEl = document.getElementById('survey-close');
     if (surveyCloseEl) surveyCloseEl.setAttribute('aria-label', t('post-mod-close'));
+    applyAccountTranslations();
   }
 
-  function updateLangButtons() {
-    langSwitchButtons.forEach(function (btn) {
-      if (btn.getAttribute('data-lang') === currentLang) {
-        btn.classList.add('active');
-      } else {
-        btn.classList.remove('active');
-      }
-    });
-  }
 
   // ========== UTILITAIRES ==========
 
@@ -220,7 +384,8 @@
 
   function getLocalizedText(field) {
     if (typeof field === 'object' && field !== null) {
-      return field[currentLang] || field.fr || field.en || '';
+      // Les descriptions de mods.json n'existent qu'en français et en anglais.
+      return field[langCode()] || field.en || field.fr || '';
     }
     return field || '';
   }
@@ -232,24 +397,36 @@
   }
 
   function formatCount(count) {
-    var locale = currentLang === 'fr' ? 'fr-FR' : 'en-US';
-    return count.toLocaleString(locale);
+    return count.toLocaleString(localeTag());
+  }
+
+  function getModRating(mod) {
+    var stat = modReviewStats[mod.id];
+    return (stat && stat.count) ? stat.avg : null;
   }
 
   function sortMods(arr) {
     return arr.slice().sort(function (a, b) {
       var diff;
-      if (currentSort === 'downloads-asc') {
+      if (currentSort === 'rating-desc' || currentSort === 'rating-asc') {
+        var ra = getModRating(a);
+        var rb = getModRating(b);
+        // Les mods sans note restent toujours en fin de liste.
+        if (ra === null && rb === null) return a.name.localeCompare(b.name, localeTag());
+        if (ra === null) return 1;
+        if (rb === null) return -1;
+        diff = currentSort === 'rating-asc' ? ra - rb : rb - ra;
+      } else if (currentSort === 'downloads-asc') {
         diff = getDownloadCount(a) - getDownloadCount(b);
       } else if (currentSort === 'name-asc') {
-        diff = a.name.localeCompare(b.name, currentLang);
+        diff = a.name.localeCompare(b.name, localeTag());
       } else if (currentSort === 'name-desc') {
-        diff = b.name.localeCompare(a.name, currentLang);
+        diff = b.name.localeCompare(a.name, localeTag());
       } else {
         diff = getDownloadCount(b) - getDownloadCount(a);
       }
       if (diff !== 0) return diff;
-      return a.name.localeCompare(b.name, currentLang);
+      return a.name.localeCompare(b.name, localeTag());
     });
   }
 
@@ -347,6 +524,7 @@
           '<span class="mod-card-excerpt">' +
           escapeHtml(excerpt(desc, 140)) +
           '</span>' +
+          buildRatingBadgeHtml(mod.id) +
           '<span class="mod-card-downloads">' +
           downloadIcon() +
           '<span class="dl-count">' +
@@ -377,6 +555,7 @@
     var author = escapeHtml(mod.author);
     var name = escapeHtml(mod.name);
     var dlCount = getDownloadCount(mod);
+    var ratingHtml = buildRatingBadgeHtml(mod.id);
     var discordHtml = '';
 
     if (mod.discord) {
@@ -408,6 +587,7 @@
       '</span> ' +
       (dlCount === 1 ? t('downloads-label-singular') : t('downloads-label-plural')) +
       '</span>' +
+      ratingHtml +
       discordHtml +
       '</div>' +
       '<div class="mod-detail-description">' +
@@ -422,30 +602,882 @@
       '" data-file="' +
       escapeHtml(mod.name) +
       '">' + t('download-button') + '</a>' +
-      '</div>';
+      '</div>' +
+      '<div id="mod-reviews-section" class="mod-reviews-section"></div>';
+
+    renderReviewsSection(mod.id);
   }
 
   // ========== ROUTAGE ==========
 
+  function showPage(name) {
+    [pageHome, pageDetail, pageAccount, pageProfile].forEach(function (page) {
+      if (page) page.classList.remove('active');
+    });
+    var target = name === 'detail' ? pageDetail
+      : name === 'account' ? pageAccount
+        : name === 'profile' ? pageProfile
+          : pageHome;
+    if (target) target.classList.add('active');
+  }
+
   function route() {
     var hash = window.location.hash || '#/';
-    var match = hash.match(/^#\/mod\/(.+)$/);
+    var modMatch = hash.match(/^#\/mod\/(.+)$/);
 
-    if (match) {
-      var id = decodeURIComponent(match[1]);
-      pageHome.classList.remove('active');
-      pageDetail.classList.add('active');
-      renderDetail(id);
+    if (modMatch) {
+      showPage('detail');
+      renderDetail(decodeURIComponent(modMatch[1]));
       window.scrollTo(0, 0);
-    } else {
-      pageDetail.classList.remove('active');
-      pageHome.classList.add('active');
-      document.title = t('page-title');
-      window.scrollTo(0, 0);
+      return;
     }
+
+    if (hash === '#/compte') {
+      showPage('account');
+      resetAuthForms();
+      document.title = t('account-login-title') + ' — MultiDB';
+      window.scrollTo(0, 0);
+      return;
+    }
+
+    if (hash === '#/profil') {
+      showPage('profile');
+      refreshProfileData();
+      document.title = t('profile-title') + ' — MultiDB';
+      window.scrollTo(0, 0);
+      // La session Supabase peut ne pas être encore restaurée : on attend
+      // que le module soit prêt avant de renvoyer vers la connexion.
+      if (window.Deblock) {
+        Deblock.ready().then(function () {
+          if (!Deblock.getUser()) window.location.hash = '#/compte';
+          else refreshProfileData();
+        });
+      }
+      return;
+    }
+
+    showPage('home');
+    document.title = t('page-title');
+    window.scrollTo(0, 0);
   }
 
   window.addEventListener('hashchange', route);
+
+  // ========== COMPTE DEBLOCK (SUPABASE AUTH) ==========
+
+  function supabaseUrl() {
+    return (window.Deblock && Deblock.getSupabaseUrl)
+      ? Deblock.getSupabaseUrl()
+      : 'https://rdtvftclctwfqtpkbzlf.supabase.co';
+  }
+
+  function getApiHeaders() {
+    if (window.Deblock && Deblock.getApiHeaders) return Deblock.getApiHeaders();
+    return { 'Content-Type': 'application/json' };
+  }
+
+  function applyAccountTranslations() {
+    var setText = function (id, key) {
+      var el = document.getElementById(id);
+      if (el) el.textContent = t(key);
+    };
+    var setHtml = function (id, key) {
+      var el = document.getElementById(id);
+      if (el) el.innerHTML = t(key);
+    };
+    var setPlaceholder = function (id, key) {
+      var el = document.getElementById(id);
+      if (el) el.placeholder = t(key);
+    };
+
+    // Widget d'en-tête
+    setText('deblock-btn-label', 'account-login');
+
+    // Page compte
+    setText('account-hero-title', 'account-hero-title');
+    setText('account-hero-sub', 'account-hero-sub');
+    setText('account-login-title', 'account-login-title');
+    setText('account-email-label', 'account-email');
+    setText('account-password-label', 'account-password');
+    setText('deblock-login-submit', 'account-login-btn');
+    setText('account-no-account', 'account-no-account');
+    setText('deblock-show-signup', 'account-create');
+    setText('deblock-show-forgot', 'account-forgot');
+    setText('account-signup-title', 'account-signup-title');
+    setText('account-pseudo-label', 'account-pseudo');
+    setText('account-signup-email-label', 'account-email');
+    setText('account-signup-password-label', 'account-password');
+    setText('account-confirm-label', 'account-confirm-password');
+    setHtml('account-consent', 'account-consent');
+    setText('account-info-note-login', 'account-shared-note');
+    setText('account-info-note-signup', 'account-shared-note');
+    setText('deblock-signup-submit', 'account-signup-btn');
+    setText('account-has-account', 'account-has-account');
+    setText('deblock-show-login', 'account-login');
+    setText('account-forgot-title', 'account-forgot-title');
+    setText('account-forgot-email-label', 'account-email');
+    setText('deblock-forgot-submit', 'account-send-reset');
+    setText('deblock-back-to-login', 'account-back-login');
+    setText('account-loading-text', 'account-loading');
+    setPlaceholder('deblock-signup-pseudo', 'account-pseudo-placeholder');
+
+    // Page profil
+    setText('profile-title', 'profile-title');
+    setText('profile-subtitle', 'profile-subtitle');
+    setText('profile-avatar-title', 'profile-avatar');
+    setText('profile-avatar-hint', 'profile-avatar-hint');
+    setText('profile-avatar-save', 'profile-avatar-save');
+    setText('profile-avatar-remove', 'profile-avatar-remove');
+    setText('profile-pseudo-title', 'profile-pseudo');
+    setText('profile-save-pseudo', 'profile-save');
+    setText('profile-email-title', 'profile-email');
+    setText('profile-save-email', 'profile-save');
+    setText('profile-password-title', 'profile-password');
+    setText('profile-save-password', 'profile-save');
+    setText('profile-logout-title', 'profile-logout');
+    setText('deblock-logout-btn', 'profile-logout-btn');
+    setText('profile-delete-title', 'profile-delete-title');
+    setText('profile-delete-text', 'profile-delete-text');
+    setText('profile-delete-btn', 'profile-delete-btn');
+    setText('profile-delete-cancel', 'profile-delete-cancel');
+    setText('profile-delete-confirm', 'profile-delete-confirm-btn');
+    setPlaceholder('profile-pseudo', 'profile-pseudo-placeholder');
+    setPlaceholder('profile-new-password', 'profile-new-password');
+    setPlaceholder('profile-confirm-password', 'profile-confirm-password');
+  }
+
+  function resetAuthForms() {
+    var loginMode = document.getElementById('deblock-login-mode');
+    var signupMode = document.getElementById('deblock-signup-mode');
+    var forgotMode = document.getElementById('deblock-forgot-mode');
+    var loading = document.getElementById('deblock-auth-loading');
+    var err = document.getElementById('deblock-login-error');
+    if (loginMode) loginMode.hidden = false;
+    if (signupMode) signupMode.hidden = true;
+    if (forgotMode) forgotMode.hidden = true;
+    if (loading) loading.hidden = true;
+    if (err) err.hidden = true;
+    ['deblock-email', 'deblock-password', 'deblock-signup-pseudo', 'deblock-signup-email',
+      'deblock-signup-password', 'deblock-signup-confirm', 'deblock-forgot-email'
+    ].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) el.value = '';
+    });
+    var consent = document.getElementById('deblock-signup-consent');
+    if (consent) consent.checked = false;
+  }
+
+  function openAccountPage() {
+    if ((window.location.hash || '') === '#/compte') {
+      resetAuthForms();
+    } else {
+      window.location.hash = '#/compte';
+    }
+  }
+
+  function showLoginError(msg) {
+    var errEl = document.getElementById('deblock-login-error');
+    if (!errEl) return;
+    errEl.textContent = msg;
+    errEl.hidden = false;
+  }
+
+  function showAuthLoading(show) {
+    var loading = document.getElementById('deblock-auth-loading');
+    var loginMode = document.getElementById('deblock-login-mode');
+    var signupMode = document.getElementById('deblock-signup-mode');
+    var forgotMode = document.getElementById('deblock-forgot-mode');
+    if (loading) loading.hidden = !show;
+    if (loginMode) loginMode.hidden = show;
+    if (signupMode) signupMode.hidden = true;
+    if (forgotMode) forgotMode.hidden = true;
+  }
+
+  function updateDeblockUI() {
+    var loginBtn = document.getElementById('deblock-login-btn');
+    var userInfo = document.getElementById('deblock-user-info');
+    var avatarEl = document.getElementById('deblock-avatar');
+    var usernameEl = document.getElementById('deblock-username');
+    var user = window.Deblock ? Deblock.getUser() : null;
+
+    if (user) {
+      if (loginBtn) loginBtn.style.display = 'none';
+      if (userInfo) {
+        userInfo.removeAttribute('hidden');
+        userInfo.style.display = 'flex';
+      }
+      if (avatarEl) {
+        avatarEl.src = Deblock.getAvatarUrl();
+        avatarEl.alt = Deblock.getDisplayName();
+      }
+      if (usernameEl) usernameEl.textContent = Deblock.getDisplayName();
+    } else {
+      if (loginBtn) loginBtn.style.display = '';
+      if (userInfo) {
+        userInfo.setAttribute('hidden', '');
+        userInfo.style.display = 'none';
+      }
+    }
+
+    // Rafraîchit le formulaire d'avis / la page profil selon la route courante.
+    var hash = window.location.hash || '';
+    var modMatch = hash.match(/^#\/mod\/(.+)$/);
+    if (modMatch) renderReviewsSection(decodeURIComponent(modMatch[1]));
+    if (hash === '#/profil') {
+      if (user) refreshProfileData();
+      else window.location.hash = '#/compte';
+    }
+  }
+
+  var deblockAuthInitialized = false;
+
+  function initDeblockAuth() {
+    if (deblockAuthInitialized || !window.Deblock) return;
+    deblockAuthInitialized = true;
+
+    Deblock.ready().then(function () {
+      updateDeblockUI();
+      initProfilePage();
+      refreshProfileData();
+    });
+
+    Deblock.onAuthStateChanged(function () {
+      updateDeblockUI();
+    });
+
+    // ── Navigation / basculement de mode ──
+    document.addEventListener('click', function (e) {
+      if (e.target.closest('#deblock-login-btn')) {
+        e.preventDefault();
+        if (Deblock.getUser()) return;
+        openAccountPage();
+      }
+
+      if (e.target.closest('#deblock-logout-btn')) {
+        Deblock.logout().then(function () {
+          window.location.hash = '#/';
+        }).catch(console.error);
+      }
+
+      if (e.target.closest('#deblock-show-signup')) {
+        e.preventDefault();
+        document.getElementById('deblock-login-mode').hidden = true;
+        document.getElementById('deblock-signup-mode').hidden = false;
+        document.getElementById('deblock-login-error').hidden = true;
+        ['deblock-signup-pseudo', 'deblock-signup-email', 'deblock-signup-password', 'deblock-signup-confirm'].forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) el.value = '';
+        });
+      }
+
+      if (e.target.closest('#deblock-show-login')) {
+        e.preventDefault();
+        document.getElementById('deblock-signup-mode').hidden = true;
+        document.getElementById('deblock-login-mode').hidden = false;
+        document.getElementById('deblock-login-error').hidden = true;
+      }
+
+      if (e.target.closest('#deblock-show-forgot')) {
+        e.preventDefault();
+        document.getElementById('deblock-login-mode').hidden = true;
+        document.getElementById('deblock-forgot-mode').hidden = false;
+        document.getElementById('deblock-login-error').hidden = true;
+        document.getElementById('deblock-forgot-email').value = '';
+      }
+
+      if (e.target.closest('#deblock-back-to-login')) {
+        e.preventDefault();
+        document.getElementById('deblock-forgot-mode').hidden = true;
+        document.getElementById('deblock-login-mode').hidden = false;
+        document.getElementById('deblock-login-error').hidden = true;
+      }
+
+      if (e.target.closest('#deblock-password-toggle')) {
+        e.preventDefault();
+        var pwInput = document.getElementById('deblock-password');
+        var toggle = e.target.closest('#deblock-password-toggle');
+        if (!pwInput || !toggle) return;
+        if (pwInput.type === 'password') {
+          pwInput.type = 'text';
+          toggle.textContent = '🙈';
+        } else {
+          pwInput.type = 'password';
+          toggle.textContent = '👁';
+        }
+      }
+    });
+
+    // ── Connexion ──
+    var loginSubmit = document.getElementById('deblock-login-submit');
+    if (loginSubmit) loginSubmit.addEventListener('click', async function () {
+      var email = (document.getElementById('deblock-email').value || '').trim();
+      var password = document.getElementById('deblock-password').value;
+      if (!email || !password) { showLoginError(t('account-err-fill')); return; }
+      showAuthLoading(true);
+      try {
+        await Deblock.login(email, password);
+        showAuthLoading(false);
+        window.location.hash = '#/';
+      } catch (err) {
+        showAuthLoading(false);
+        showLoginError(err.message || t('account-err-login'));
+      }
+    });
+
+    // ── Inscription ──
+    var signupSubmit = document.getElementById('deblock-signup-submit');
+    if (signupSubmit) signupSubmit.addEventListener('click', async function () {
+      var pseudo = (document.getElementById('deblock-signup-pseudo').value || '').trim();
+      var email = (document.getElementById('deblock-signup-email').value || '').trim();
+      var password = document.getElementById('deblock-signup-password').value;
+      var confirm = document.getElementById('deblock-signup-confirm').value;
+      if (!email || !password) { showLoginError(t('account-err-fill')); return; }
+      if (password.length < 6) { showLoginError(t('account-err-password-short')); return; }
+      if (password !== confirm) { showLoginError(t('account-err-password-match')); return; }
+      var consent = document.getElementById('deblock-signup-consent');
+      if (consent && !consent.checked) { showLoginError(t('account-err-consent')); return; }
+      showAuthLoading(true);
+      try {
+        await Deblock.signUp(email, password, pseudo || null);
+        showAuthLoading(false);
+        showLoginError(t('account-signup-success'));
+      } catch (err) {
+        showAuthLoading(false);
+        showLoginError(err.message || t('account-err-signup'));
+      }
+    });
+
+    // ── Mot de passe oublié ──
+    var forgotSubmit = document.getElementById('deblock-forgot-submit');
+    if (forgotSubmit) forgotSubmit.addEventListener('click', async function () {
+      var email = (document.getElementById('deblock-forgot-email').value || '').trim();
+      if (!email) { showLoginError(t('account-err-email')); return; }
+      showAuthLoading(true);
+      try {
+        await Deblock.sendMagicLink(email);
+        showAuthLoading(false);
+        resetAuthForms();
+        window.location.hash = '#/';
+      } catch (err) {
+        showAuthLoading(false);
+        showLoginError(err.message || t('account-err-send'));
+      }
+    });
+
+    // ── Touche Entrée ──
+    var pwEl = document.getElementById('deblock-password');
+    if (pwEl) pwEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('deblock-login-submit').click();
+    });
+    var confirmEl = document.getElementById('deblock-signup-confirm');
+    if (confirmEl) confirmEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('deblock-signup-submit').click();
+    });
+    var forgotEl = document.getElementById('deblock-forgot-email');
+    if (forgotEl) forgotEl.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter') document.getElementById('deblock-forgot-submit').click();
+    });
+  }
+
+  // ========== PAGE PROFIL ==========
+
+  var profilePageInitialized = false;
+
+  function refreshProfileData() {
+    if (!window.Deblock) return;
+    var user = Deblock.getUser();
+    if (!user) return;
+    var pseudoInput = document.getElementById('profile-pseudo');
+    var emailInput = document.getElementById('profile-email');
+    if (pseudoInput) pseudoInput.value = Deblock.getDisplayName() || '';
+    if (emailInput) emailInput.value = user.email || '';
+    var avatarPreviewEl = document.getElementById('profile-avatar-preview');
+    if (avatarPreviewEl) avatarPreviewEl.src = Deblock.getAvatarUrl() || '';
+    var newPwdInput = document.getElementById('profile-new-password');
+    var confirmPwdInput = document.getElementById('profile-confirm-password');
+    if (newPwdInput) newPwdInput.value = '';
+    if (confirmPwdInput) confirmPwdInput.value = '';
+    var deleteBtn = document.getElementById('profile-delete-btn');
+    var deleteCancel = document.getElementById('profile-delete-cancel');
+    var deleteConfirm = document.getElementById('profile-delete-confirm');
+    if (deleteBtn) deleteBtn.hidden = false;
+    if (deleteCancel) deleteCancel.hidden = true;
+    if (deleteConfirm) deleteConfirm.hidden = true;
+    var msgEl = document.getElementById('profile-status-msg');
+    if (msgEl) msgEl.hidden = true;
+  }
+
+  function initProfilePage() {
+    if (profilePageInitialized) return;
+    profilePageInitialized = true;
+
+    var profilePage = document.getElementById('page-profile');
+    if (!profilePage) return;
+
+    var msgEl = document.getElementById('profile-status-msg');
+
+    function showProfileMsg(msg, isSuccess) {
+      if (!msgEl) return;
+      msgEl.textContent = msg;
+      msgEl.hidden = false;
+      msgEl.style.color = isSuccess ? 'var(--green)' : '#f87171';
+      setTimeout(function () { msgEl.hidden = true; }, 4000);
+    }
+
+    /* ── Avatar ── */
+    (function initAvatarSection() {
+      var previewEl = document.getElementById('profile-avatar-preview');
+      var inputEl = document.getElementById('profile-avatar-input');
+      var saveBtn = document.getElementById('profile-avatar-save');
+      var removeBtn = document.getElementById('profile-avatar-remove');
+      var progressWrap = document.getElementById('profile-avatar-progress');
+      var progressBar = progressWrap && progressWrap.querySelector('.profile-avatar-progress-bar');
+
+      var MAX_BYTES = 2 * 1024 * 1024;
+      var pendingFile = null;
+
+      function setProgress(pct) {
+        if (!progressWrap || !progressBar) return;
+        progressWrap.hidden = pct === 0;
+        progressBar.style.width = pct + '%';
+      }
+
+      function loadCurrentAvatar() {
+        if (!previewEl) return;
+        previewEl.src = Deblock.getAvatarUrl() || '';
+        previewEl.onerror = function () { previewEl.src = ''; };
+      }
+      loadCurrentAvatar();
+
+      if (inputEl) {
+        inputEl.addEventListener('change', function () {
+          var file = inputEl.files && inputEl.files[0];
+          if (!file) return;
+          if (file.size > MAX_BYTES) {
+            showProfileMsg(t('profile-avatar-too-big'), false);
+            inputEl.value = '';
+            return;
+          }
+          pendingFile = file;
+          if (saveBtn) saveBtn.disabled = false;
+          var reader = new FileReader();
+          reader.onload = function (e) { if (previewEl) previewEl.src = e.target.result; };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      if (saveBtn) {
+        saveBtn.addEventListener('click', async function () {
+          if (!pendingFile) return;
+          saveBtn.disabled = true;
+          setProgress(10);
+          try {
+            var avatarUrl = await uploadAvatarWithFallback(pendingFile);
+            setProgress(90);
+            await Deblock.updateProfile({ avatar_url: avatarUrl });
+            setProgress(100);
+            pendingFile = null;
+            if (inputEl) inputEl.value = '';
+            updateDeblockUI();
+            showProfileMsg(t('profile-avatar-saved'), true);
+          } catch (err) {
+            showProfileMsg('❌ ' + (err.message || 'Erreur lors de l\'upload.'), false);
+          } finally {
+            setTimeout(function () { setProgress(0); if (progressWrap) progressWrap.hidden = true; }, 1200);
+            saveBtn.disabled = !pendingFile;
+          }
+        });
+      }
+
+      if (removeBtn) {
+        removeBtn.addEventListener('click', async function () {
+          try {
+            await Deblock.updateProfile({ avatar_url: '' });
+            if (previewEl) previewEl.src = '';
+            pendingFile = null;
+            if (inputEl) inputEl.value = '';
+            if (saveBtn) saveBtn.disabled = true;
+            updateDeblockUI();
+            showProfileMsg(t('profile-avatar-removed'), true);
+          } catch (err) {
+            showProfileMsg('❌ ' + (err.message || 'Erreur.'), false);
+          }
+        });
+      }
+
+      async function uploadAvatarWithFallback(file) {
+        try {
+          var url = await uploadToSupabase(file);
+          if (url) return url;
+        } catch (e) {
+          console.warn('[Avatar] Supabase Storage échoué, bascule sur CatBox :', e.message);
+        }
+        return await uploadToCatBox(file);
+      }
+
+      async function uploadToSupabase(file) {
+        var client = Deblock.getClient();
+        if (!client) throw new Error('Client Supabase non disponible');
+        var user = Deblock.getUser();
+        if (!user) throw new Error('Non authentifié');
+
+        var ext = file.name.split('.').pop() || 'jpg';
+        var path = 'avatars/' + user.id + '.' + ext;
+
+        var res = await client.storage.from('avatars').upload(path, file, { upsert: true, contentType: file.type });
+        if (res.error) throw new Error(res.error.message);
+
+        var pub = client.storage.from('avatars').getPublicUrl(path);
+        if (!pub.data || !pub.data.publicUrl) throw new Error('URL publique introuvable');
+        return pub.data.publicUrl + '?t=' + Date.now();
+      }
+
+      async function uploadToCatBox(file) {
+        // CatBox bloque le CORS direct depuis le navigateur, on passe par des proxies.
+        try {
+          var f1 = new FormData();
+          f1.append('reqtype', 'fileupload');
+          f1.append('fileToUpload', file);
+          var r1 = await fetch('https://corsproxy.io/?url=https://catbox.moe/user/api.php', { method: 'POST', body: f1 });
+          if (r1.ok) { var u1 = (await r1.text()).trim(); if (u1.indexOf('https://') === 0) return u1; }
+        } catch (e) { /* ignore */ }
+
+        try {
+          var f2 = new FormData();
+          f2.append('reqtype', 'fileupload');
+          f2.append('fileToUpload', file);
+          var r2 = await fetch('https://crossorigin.me/https://catbox.moe/user/api.php', { method: 'POST', body: f2 });
+          if (r2.ok) { var u2 = (await r2.text()).trim(); if (u2.indexOf('https://') === 0) return u2; }
+        } catch (e) { /* ignore */ }
+
+        throw new Error('Upload impossible (CORS). Active le bucket Supabase Storage "avatars" pour résoudre ce problème.');
+      }
+    })();
+
+    /* ── Pseudo ── */
+    var savePseudo = document.getElementById('profile-save-pseudo');
+    if (savePseudo) savePseudo.addEventListener('click', async function () {
+      var pseudoInput = document.getElementById('profile-pseudo');
+      var newPseudo = pseudoInput ? pseudoInput.value.trim() : '';
+      if (!newPseudo) { showProfileMsg(t('profile-pseudo-empty'), false); return; }
+      try {
+        await Deblock.updateProfile({ display_name: newPseudo });
+        updateDeblockUI();
+        showProfileMsg(t('profile-pseudo-changed'), true);
+      } catch (err) {
+        showProfileMsg(t('profile-error') + (err.message || ''), false);
+      }
+    });
+
+    /* ── Email ── */
+    var saveEmail = document.getElementById('profile-save-email');
+    if (saveEmail) saveEmail.addEventListener('click', async function () {
+      var emailInput = document.getElementById('profile-email');
+      var newEmail = emailInput ? emailInput.value.trim() : '';
+      if (!newEmail) { showProfileMsg(t('profile-email-empty'), false); return; }
+      try {
+        await Deblock.updateEmail(newEmail);
+        showProfileMsg(t('profile-email-changed'), true);
+      } catch (err) {
+        showProfileMsg(t('profile-error') + (err.message || ''), false);
+      }
+    });
+
+    /* ── Mot de passe ── */
+    var savePassword = document.getElementById('profile-save-password');
+    if (savePassword) savePassword.addEventListener('click', async function () {
+      var newPwdInput = document.getElementById('profile-new-password');
+      var confirmPwdInput = document.getElementById('profile-confirm-password');
+      var pwd = newPwdInput ? newPwdInput.value : '';
+      var confirm = confirmPwdInput ? confirmPwdInput.value : '';
+      if (!pwd || pwd.length < 6) { showProfileMsg(t('account-err-password-short'), false); return; }
+      if (pwd !== confirm) { showProfileMsg(t('account-err-password-match'), false); return; }
+      try {
+        await Deblock.updatePassword(pwd);
+        if (newPwdInput) newPwdInput.value = '';
+        if (confirmPwdInput) confirmPwdInput.value = '';
+        showProfileMsg(t('profile-password-changed'), true);
+      } catch (err) {
+        showProfileMsg(t('profile-error') + (err.message || ''), false);
+      }
+    });
+
+    if (document.getElementById('profile-confirm-password')) {
+      document.getElementById('profile-confirm-password').addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') document.getElementById('profile-save-password').click();
+      });
+    }
+
+    /* ── Suppression de compte ── */
+    var deleteBtn = document.getElementById('profile-delete-btn');
+    var deleteCancel = document.getElementById('profile-delete-cancel');
+    var deleteConfirm = document.getElementById('profile-delete-confirm');
+
+    if (deleteBtn) deleteBtn.addEventListener('click', function () {
+      deleteBtn.hidden = true;
+      if (deleteCancel) deleteCancel.hidden = false;
+      if (deleteConfirm) deleteConfirm.hidden = false;
+    });
+
+    if (deleteCancel) deleteCancel.addEventListener('click', function () {
+      deleteCancel.hidden = true;
+      if (deleteConfirm) deleteConfirm.hidden = true;
+      if (deleteBtn) deleteBtn.hidden = false;
+    });
+
+    if (deleteConfirm) deleteConfirm.addEventListener('click', async function () {
+      try {
+        await Deblock.deleteAccount();
+        showProfileMsg(t('profile-deleted'), true);
+        setTimeout(function () {
+          window.location.hash = '#/';
+          updateDeblockUI();
+        }, 1500);
+      } catch (err) {
+        showProfileMsg(t('profile-error') + (err.message || ''), false);
+        if (deleteCancel) deleteCancel.hidden = true;
+        if (deleteConfirm) deleteConfirm.hidden = true;
+        if (deleteBtn) deleteBtn.hidden = false;
+      }
+    });
+  }
+
+  // ========== SYSTÈME D'AVIS (table mod_reviews) ==========
+
+  function hasRecentlyReviewed(modId) {
+    if (window.Deblock && Deblock.getUser()) return false;
+    try {
+      var data = JSON.parse(localStorage.getItem('multidb_reviewed') || '{}');
+      var last = data[modId];
+      return !!(last && (Date.now() - last) < 3600000);
+    } catch (e) { return false; }
+  }
+
+  function markReviewed(modId) {
+    if (window.Deblock && Deblock.getUser()) return;
+    try {
+      var data = JSON.parse(localStorage.getItem('multidb_reviewed') || '{}');
+      data[modId] = Date.now();
+      localStorage.setItem('multidb_reviewed', JSON.stringify(data));
+    } catch (e) { /* ignore */ }
+  }
+
+  function fetchModReviews(modId) {
+    var url = supabaseUrl() + '/rest/v1/mod_reviews?mod_id=eq.' +
+      encodeURIComponent(modId) + '&order=created_at.desc&limit=50';
+    return fetch(url, { headers: getApiHeaders() }).then(function (res) {
+      if (!res.ok) throw new Error('Erreur chargement avis (' + res.status + ')');
+      return res.json();
+    });
+  }
+
+  function submitModReview(modId, pseudo, rating, text) {
+    var currentUser = window.Deblock ? Deblock.getUser() : null;
+    var payload = {
+      mod_id: modId,
+      pseudo: (pseudo || 'Anonyme').slice(0, 32).trim() || 'Anonyme',
+      rating: rating,
+      text: (text || '').slice(0, 280).trim(),
+    };
+    if (currentUser) {
+      payload.user_id = currentUser.id;
+      payload.pseudo = (Deblock.getDisplayName() || 'Anonyme').slice(0, 32);
+    }
+    return fetch(supabaseUrl() + '/rest/v1/mod_reviews', {
+      method: 'POST',
+      headers: Object.assign({}, getApiHeaders(), { 'Prefer': 'return=minimal' }),
+      body: JSON.stringify(payload),
+    }).then(function (res) {
+      if (res.ok) return;
+      return res.json().catch(function () { return {}; }).then(function (err) {
+        if (err && err.code === '23505') throw new Error('already_reviewed');
+        throw new Error((err && err.message) || 'Erreur soumission');
+      });
+    });
+  }
+
+  function buildStarsHtml(rating, total) {
+    total = total || 5;
+    var html = '';
+    for (var i = 1; i <= total; i++) {
+      html += '<span class="review-star' + (i <= rating ? ' filled' : '') + '">★</span>';
+    }
+    return html;
+  }
+
+  function buildAvgHtml(reviews) {
+    if (!reviews.length) return '<span class="reviews-no-badge">' + t('reviews-no-badge') + '</span>';
+    var avg = (reviews.reduce(function (s, r) { return s + r.rating; }, 0) / reviews.length).toFixed(1);
+    return '<span class="reviews-avg-badge">★ ' + avg + ' <span class="reviews-count">(' + reviews.length + ' ' + t('reviews-count-suffix') + ')</span></span>';
+  }
+
+  function buildReviewCardsHtml(reviews) {
+    if (!reviews.length) return '<p class="reviews-empty">' + t('reviews-no-reviews') + '</p>';
+    var locale = localeTag();
+    return reviews.map(function (r) {
+      var dateLabel = r.date || (r.created_at ? new Date(r.created_at).toLocaleDateString(locale) : '');
+      return '<div class="review-card"><div class="review-header"><span class="review-stars">' +
+        buildStarsHtml(r.rating) +
+        '</span><span class="review-pseudo">' + escapeHtml(r.pseudo || 'Anonyme') +
+        '</span><span class="review-date">' + escapeHtml(dateLabel) + '</span></div>' +
+        (r.text ? '<p class="review-text">' + escapeHtml(r.text) + '</p>' : '') + '</div>';
+    }).join('');
+  }
+
+  function bindStarPicker(picker) {
+    if (!picker) return;
+    var stars = picker.querySelectorAll('.star-pick');
+    function refresh(selected, hovered) {
+      stars.forEach(function (s) {
+        var v = parseInt(s.dataset.val, 10);
+        s.classList.toggle('active', hovered ? v <= hovered : v <= selected);
+      });
+    }
+    stars.forEach(function (star) {
+      star.addEventListener('mouseenter', function () { refresh(parseInt(picker.dataset.selected || 0, 10), parseInt(star.dataset.val, 10)); });
+      star.addEventListener('mouseleave', function () { refresh(parseInt(picker.dataset.selected || 0, 10), 0); });
+      star.addEventListener('click', function () {
+        picker.dataset.selected = star.dataset.val;
+        refresh(parseInt(star.dataset.val, 10), 0);
+      });
+    });
+  }
+
+  function renderReviewsSection(modId) {
+    var section = document.getElementById('mod-reviews-section');
+    if (!section) return;
+    var currentUser = window.Deblock ? Deblock.getUser() : null;
+    var alreadyReviewed = hasRecentlyReviewed(modId);
+    var formHtml;
+
+    if (!currentUser) {
+      formHtml = '<div class="review-deblock-prompt"><svg width="18" height="18" viewBox="0 0 24 24" fill="#22c55e"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/></svg><span>' + t('reviews-connect-prompt') + '</span><button type="button" class="btn-deblock-inline" id="review-deblock-login-btn">' + t('reviews-login-btn') + '</button></div>';
+    } else if (alreadyReviewed) {
+      formHtml = '<p class="review-already-done">' + t('reviews-already-done') + '</p>';
+    } else {
+      var starsHtml = '';
+      for (var i = 1; i <= 5; i++) starsHtml += '<span class="star-pick" data-val="' + i + '">★</span>';
+      formHtml = '<div class="review-form" id="review-form-wrap"><p class="review-form-title">' +
+        t('reviews-form-title-pre') + '<strong style="color:var(--green-muted)">' + escapeHtml(Deblock.getDisplayName()) + '</strong></p>' +
+        '<div class="review-form-fields"><div class="review-form-row"><div class="review-star-picker" data-selected="0">' +
+        '<span class="review-star-picker-label">' + t('reviews-rating-label') + '</span>' + starsHtml + '</div></div>' +
+        '<textarea class="review-input review-text-input" placeholder="' + escapeHtml(t('reviews-placeholder')) + '" maxlength="280" rows="2"></textarea>' +
+        '<div class="review-form-footer"><span class="review-char-count" id="review-char-count">0 / 280</span>' +
+        '<button type="button" class="btn btn-primary review-submit-btn">' + t('review-submit-btn') + '</button></div></div></div>';
+    }
+
+    section.innerHTML = '<div class="reviews-header"><h3 class="reviews-title">' + t('reviews-title') + '</h3>' +
+      '<div class="reviews-header-right"><span class="reviews-avg-wrap"><span class="reviews-no-badge">' + t('reviews-loading') + '</span></span>' +
+      '<select class="reviews-sort-select" id="reviews-sort-select" aria-label="' + escapeHtml(t('reviews-title')) + '">' +
+      '<option value="recent">' + t('reviews-sort-recent') + '</option>' +
+      '<option value="desc">' + t('reviews-sort-desc') + '</option>' +
+      '<option value="asc">' + t('reviews-sort-asc') + '</option></select></div></div>' +
+      '<div class="reviews-list" id="reviews-list-inner"><div class="reviews-spinner"><div class="spinner"></div></div></div>' + formHtml;
+
+    var reviewLoginBtn = section.querySelector('#review-deblock-login-btn');
+    if (reviewLoginBtn) reviewLoginBtn.addEventListener('click', function () { openAccountPage(); });
+
+    bindStarPicker(section.querySelector('.review-star-picker'));
+
+    var textarea = section.querySelector('.review-text-input');
+    var charCount = section.querySelector('#review-char-count');
+    if (textarea && charCount) {
+      textarea.addEventListener('input', function () { charCount.textContent = textarea.value.length + ' / 280'; });
+    }
+
+    var submitBtn = section.querySelector('.review-submit-btn');
+    var picker = section.querySelector('.review-star-picker');
+    if (submitBtn) {
+      submitBtn.addEventListener('click', function () {
+        var rating = picker ? parseInt(picker.dataset.selected || 0, 10) : 0;
+        if (!rating) {
+          if (picker) {
+            picker.classList.add('shake');
+            setTimeout(function () { picker.classList.remove('shake'); }, 450);
+          }
+          return;
+        }
+        var pseudo = currentUser ? Deblock.getDisplayName() : '';
+        var text = textarea ? textarea.value.trim() : '';
+        submitBtn.disabled = true;
+        submitBtn.textContent = '…';
+        submitModReview(modId, pseudo, rating, text)
+          .then(function () {
+            markReviewed(modId);
+            var form = document.getElementById('review-form-wrap');
+            if (form) form.innerHTML = '<p class="review-success-msg">' + t('reviews-success') + '</p>';
+            return fetchModReviews(modId);
+          })
+          .then(function (reviews) { refreshReviewsList(reviews, section); loadReviewStats(); })
+          .catch(function (err) {
+            console.error(err);
+            submitBtn.disabled = false;
+            submitBtn.textContent = t('review-submit-btn');
+            var msg = err.message === 'already_reviewed'
+              ? t('reviews-already-left')
+              : t('reviews-error') + escapeHtml(err.message || '');
+            submitBtn.insertAdjacentHTML('afterend', '<p class="review-error-msg">' + msg + '</p>');
+          });
+      });
+    }
+
+    fetchModReviews(modId).then(function (reviews) {
+      refreshReviewsList(reviews, section);
+      var sortSelect = section.querySelector('#reviews-sort-select');
+      if (sortSelect) sortSelect.addEventListener('change', function () { refreshReviewsList(reviews, section); });
+    }).catch(function () {
+      var list = document.getElementById('reviews-list-inner');
+      if (list) list.innerHTML = '<p class="reviews-empty">' + t('reviews-load-error') + '</p>';
+    });
+  }
+
+  function sortReviews(reviews, mode) {
+    var sorted = reviews.slice();
+    if (mode === 'desc') sorted.sort(function (a, b) { return b.rating - a.rating; });
+    else if (mode === 'asc') sorted.sort(function (a, b) { return a.rating - b.rating; });
+    return sorted;
+  }
+
+  function refreshReviewsList(reviews, section) {
+    var sortSelect = section.querySelector('#reviews-sort-select');
+    var mode = sortSelect ? sortSelect.value : 'recent';
+    var sorted = sortReviews(reviews, mode);
+    var list = document.getElementById('reviews-list-inner');
+    if (list) list.innerHTML = buildReviewCardsHtml(sorted);
+    var avgWrap = section.querySelector('.reviews-avg-wrap');
+    if (avgWrap) avgWrap.innerHTML = buildAvgHtml(reviews);
+  }
+
+  function buildRatingBadgeHtml(modId) {
+    var stat = modReviewStats[modId];
+    if (!stat || !stat.count) return '';
+    return '<span class="mod-card-rating">★ ' + stat.avg.toFixed(1) +
+      ' <span class="rating-count">(' + stat.count + ')</span></span>';
+  }
+
+  function loadReviewStats() {
+    fetch(supabaseUrl() + '/rest/v1/mod_reviews?select=mod_id,rating&limit=10000', { headers: getApiHeaders() })
+      .then(function (res) {
+        if (!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function (rows) {
+        if (!Array.isArray(rows)) return;
+        var acc = {};
+        rows.forEach(function (r) {
+          if (!r || typeof r.mod_id !== 'string' || typeof r.rating !== 'number') return;
+          if (!acc[r.mod_id]) acc[r.mod_id] = { sum: 0, count: 0 };
+          acc[r.mod_id].sum += r.rating;
+          acc[r.mod_id].count += 1;
+        });
+        Object.keys(acc).forEach(function (k) { acc[k].avg = acc[k].sum / acc[k].count; });
+        modReviewStats = acc;
+        refreshCounters();
+      })
+      .catch(function () {
+        // Table mod_reviews absente ou inaccessible : on n'affiche simplement aucune note.
+      });
+  }
 
   // ========== ÉVÉNEMENTS ==========
 
@@ -515,13 +1547,6 @@
     }, 80);
   });
 
-  langSwitchButtons.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var lang = btn.getAttribute('data-lang');
-      setLanguage(lang);
-    });
-  });
-
   filterButtons.forEach(function (btn) {
     btn.addEventListener('click', function () {
       var category = btn.getAttribute('data-category');
@@ -574,12 +1599,14 @@
     })
     .then(function (data) {
       mods = Array.isArray(data) ? data : [];
-      renderList(searchInput.value);
-      route();
+      whenI18nReady().then(function () {
+        renderList(searchInput.value);
+        route();
+      });
     })
     .catch(function () {
       loadError = true;
-      renderList('');
+      whenI18nReady().then(function () { renderList(''); });
     });
 
   // ========== CHARGEMENT DU COMPTEUR DE TÉLÉCHARGEMENTS ==========
@@ -620,14 +1647,34 @@
 
   loadDownloadCounts();
 
+  // ========== CHARGEMENT DES NOTES MOYENNES ==========
+
+  loadReviewStats();
+
+  // ========== INITIALISATION DU COMPTE DEBLOCK ==========
+
+  initDeblockAuth();
+
   // ========== INITIALISATION ==========
 
-  var savedLang = localStorage.getItem('multidb-lang');
-  var initialLang = savedLang || detectLanguage();
-  setLanguage(initialLang);
-  updateUILanguage();
+  // Attend que les traductions de la langue courante soient chargées.
+  function whenI18nReady() {
+    return (window.i18n && window.i18n.ready) ? window.i18n.ready : Promise.resolve();
+  }
 
-  renderList('');
+  // Réapplique tous les textes (statiques + générés) après un changement de langue.
+  function refreshTranslations() {
+    updateUILanguage();
+    if (mods.length > 0) {
+      renderList(searchInput.value);
+      var hash = window.location.hash || '';
+      var match = hash.match(/^#\/mod\/(.+)$/);
+      if (match) renderDetail(decodeURIComponent(match[1]));
+    }
+  }
+
+  document.addEventListener('langchange', refreshTranslations);
+  whenI18nReady().then(refreshTranslations);
 
   // ========== HALO QUI SUIT LE CURSEUR (DÉCORATIF) ==========
 

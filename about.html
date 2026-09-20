@@ -283,7 +283,10 @@
       return (browserLang === 'en' || browserLang === 'fr') ? browserLang : 'fr';
     }
 
-    currentLang = localStorage.getItem('multidb-lang') || detectLanguage();
+    // La langue est désormais stockée par i18n.js (19 langues possibles) :
+    // cette page n'étant traduite qu'en fr/en, on retombe sur fr pour le reste.
+    var savedLangAbout = localStorage.getItem('multidb-lang');
+    currentLang = (savedLangAbout === 'en' || savedLangAbout === 'fr') ? savedLangAbout : detectLanguage();
 
     // Survey popup
     var surveyOverlay = document.getElementById('survey-overlay');
