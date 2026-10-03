@@ -140,5 +140,18 @@
       "fr": "Redesign complet des items du mod Draconis",
       "en": "Complete redesign of Draconis mod items"
     }
-      }
+      },
+  {
+    "id": "old_armor",
+    "category": "texture",
+    "name": "Old Armor",
+    "author": "Aurelmattnath",
+    "discord": "thefiremulti",
+    "image": "https://multidb.vercel.app/images/old_amor.jpg",
+    "download": "https://multidb-cdn.vercel.app/old_armor.zip",
+    "description": {
+      "fr": "Ce texture pack remet les anciennes textures des armures.",
+      "en": "This texture pack restores the old armor textures."
+    }
+  }
   ]
